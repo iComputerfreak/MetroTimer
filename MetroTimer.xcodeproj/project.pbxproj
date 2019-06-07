@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB38AFA122AAEC2D00DC09BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */; };
+		AB38AFA322AAEC2D00DC09BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFA222AAEC2D00DC09BE /* ContentView.swift */; };
+		AB38AFA522AAEC2E00DC09BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFA422AAEC2E00DC09BE /* Assets.xcassets */; };
+		AB38AFA822AAEC2E00DC09BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFA722AAEC2E00DC09BE /* Preview Assets.xcassets */; };
+		AB38AFAB22AAEC2E00DC09BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFA922AAEC2E00DC09BE /* LaunchScreen.storyboard */; };
+		AB38AFB022AAEC2F00DC09BE /* MetroTimer WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AB38AFAF22AAEC2F00DC09BE /* MetroTimer WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AB38AFB622AAEC2F00DC09BE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFB422AAEC2F00DC09BE /* Interface.storyboard */; };
+		AB38AFB822AAEC2F00DC09BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFB722AAEC2F00DC09BE /* Assets.xcassets */; };
+		AB38AFBF22AAEC3000DC09BE /* MetroTimer WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AB38AFBE22AAEC3000DC09BE /* MetroTimer WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AB38AFC422AAEC3000DC09BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFC322AAEC3000DC09BE /* ContentView.swift */; };
+		AB38AFC622AAEC3000DC09BE /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFC522AAEC3000DC09BE /* HostingController.swift */; };
+		AB38AFC822AAEC3000DC09BE /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFC722AAEC3000DC09BE /* ExtensionDelegate.swift */; };
+		AB38AFCA22AAEC3000DC09BE /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFC922AAEC3000DC09BE /* ComplicationController.swift */; };
+		AB38AFCC22AAEC3000DC09BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFCB22AAEC3000DC09BE /* Assets.xcassets */; };
+		AB38AFCF22AAEC3000DC09BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFCE22AAEC3000DC09BE /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB38AFB122AAEC2F00DC09BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB38AF9522AAEC2D00DC09BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB38AFAE22AAEC2F00DC09BE;
+			remoteInfo = "MetroTimer WatchKit App";
+		};
+		AB38AFC022AAEC3000DC09BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB38AF9522AAEC2D00DC09BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB38AFBD22AAEC3000DC09BE;
+			remoteInfo = "MetroTimer WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AB38AFD622AAEC3000DC09BE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AB38AFBF22AAEC3000DC09BE /* MetroTimer WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB38AFDA22AAEC3000DC09BE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				AB38AFB022AAEC2F00DC09BE /* MetroTimer WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AB38AF9D22AAEC2D00DC09BE /* MetroTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB38AFA222AAEC2D00DC09BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB38AFA422AAEC2E00DC09BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB38AFA722AAEC2E00DC09BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB38AFAA22AAEC2E00DC09BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB38AFAC22AAEC2E00DC09BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB38AFAF22AAEC2F00DC09BE /* MetroTimer WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MetroTimer WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB38AFB522AAEC2F00DC09BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		AB38AFB722AAEC2F00DC09BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB38AFB922AAEC2F00DC09BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB38AFBE22AAEC3000DC09BE /* MetroTimer WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MetroTimer WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB38AFC322AAEC3000DC09BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB38AFC522AAEC3000DC09BE /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		AB38AFC722AAEC3000DC09BE /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		AB38AFC922AAEC3000DC09BE /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		AB38AFCB22AAEC3000DC09BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB38AFCE22AAEC3000DC09BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB38AFD022AAEC3000DC09BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB38AF9A22AAEC2D00DC09BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB38AFBB22AAEC3000DC09BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB38AF9422AAEC2D00DC09BE = {
+			isa = PBXGroup;
+			children = (
+				AB38AF9F22AAEC2D00DC09BE /* MetroTimer */,
+				AB38AFB322AAEC2F00DC09BE /* MetroTimer WatchKit App */,
+				AB38AFC222AAEC3000DC09BE /* MetroTimer WatchKit Extension */,
+				AB38AF9E22AAEC2D00DC09BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB38AF9E22AAEC2D00DC09BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB38AF9D22AAEC2D00DC09BE /* MetroTimer.app */,
+				AB38AFAF22AAEC2F00DC09BE /* MetroTimer WatchKit App.app */,
+				AB38AFBE22AAEC3000DC09BE /* MetroTimer WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB38AF9F22AAEC2D00DC09BE /* MetroTimer */ = {
+			isa = PBXGroup;
+			children = (
+				AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */,
+				AB38AFA222AAEC2D00DC09BE /* ContentView.swift */,
+				AB38AFA422AAEC2E00DC09BE /* Assets.xcassets */,
+				AB38AFA922AAEC2E00DC09BE /* LaunchScreen.storyboard */,
+				AB38AFAC22AAEC2E00DC09BE /* Info.plist */,
+				AB38AFA622AAEC2E00DC09BE /* Preview Content */,
+			);
+			path = MetroTimer;
+			sourceTree = "<group>";
+		};
+		AB38AFA622AAEC2E00DC09BE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB38AFA722AAEC2E00DC09BE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AB38AFB322AAEC2F00DC09BE /* MetroTimer WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				AB38AFB422AAEC2F00DC09BE /* Interface.storyboard */,
+				AB38AFB722AAEC2F00DC09BE /* Assets.xcassets */,
+				AB38AFB922AAEC2F00DC09BE /* Info.plist */,
+			);
+			path = "MetroTimer WatchKit App";
+			sourceTree = "<group>";
+		};
+		AB38AFC222AAEC3000DC09BE /* MetroTimer WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AB38AFC322AAEC3000DC09BE /* ContentView.swift */,
+				AB38AFC522AAEC3000DC09BE /* HostingController.swift */,
+				AB38AFC722AAEC3000DC09BE /* ExtensionDelegate.swift */,
+				AB38AFC922AAEC3000DC09BE /* ComplicationController.swift */,
+				AB38AFCB22AAEC3000DC09BE /* Assets.xcassets */,
+				AB38AFD022AAEC3000DC09BE /* Info.plist */,
+				AB38AFCD22AAEC3000DC09BE /* Preview Content */,
+			);
+			path = "MetroTimer WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		AB38AFCD22AAEC3000DC09BE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB38AFCE22AAEC3000DC09BE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB38AF9C22AAEC2D00DC09BE /* MetroTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB38AFDB22AAEC3000DC09BE /* Build configuration list for PBXNativeTarget "MetroTimer" */;
+			buildPhases = (
+				AB38AF9922AAEC2D00DC09BE /* Sources */,
+				AB38AF9A22AAEC2D00DC09BE /* Frameworks */,
+				AB38AF9B22AAEC2D00DC09BE /* Resources */,
+				AB38AFDA22AAEC3000DC09BE /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB38AFB222AAEC2F00DC09BE /* PBXTargetDependency */,
+			);
+			name = MetroTimer;
+			productName = MetroTimer;
+			productReference = AB38AF9D22AAEC2D00DC09BE /* MetroTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AB38AFAE22AAEC2F00DC09BE /* MetroTimer WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB38AFD722AAEC3000DC09BE /* Build configuration list for PBXNativeTarget "MetroTimer WatchKit App" */;
+			buildPhases = (
+				AB38AFAD22AAEC2F00DC09BE /* Resources */,
+				AB38AFD622AAEC3000DC09BE /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB38AFC122AAEC3000DC09BE /* PBXTargetDependency */,
+			);
+			name = "MetroTimer WatchKit App";
+			productName = "MetroTimer WatchKit App";
+			productReference = AB38AFAF22AAEC2F00DC09BE /* MetroTimer WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		AB38AFBD22AAEC3000DC09BE /* MetroTimer WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB38AFD322AAEC3000DC09BE /* Build configuration list for PBXNativeTarget "MetroTimer WatchKit Extension" */;
+			buildPhases = (
+				AB38AFBA22AAEC3000DC09BE /* Sources */,
+				AB38AFBB22AAEC3000DC09BE /* Frameworks */,
+				AB38AFBC22AAEC3000DC09BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MetroTimer WatchKit Extension";
+			productName = "MetroTimer WatchKit Extension";
+			productReference = AB38AFBE22AAEC3000DC09BE /* MetroTimer WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB38AF9522AAEC2D00DC09BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Jonas Frey";
+				TargetAttributes = {
+					AB38AF9C22AAEC2D00DC09BE = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					AB38AFAE22AAEC2F00DC09BE = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					AB38AFBD22AAEC3000DC09BE = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = AB38AF9822AAEC2D00DC09BE /* Build configuration list for PBXProject "MetroTimer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB38AF9422AAEC2D00DC09BE;
+			productRefGroup = AB38AF9E22AAEC2D00DC09BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB38AF9C22AAEC2D00DC09BE /* MetroTimer */,
+				AB38AFAE22AAEC2F00DC09BE /* MetroTimer WatchKit App */,
+				AB38AFBD22AAEC3000DC09BE /* MetroTimer WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB38AF9B22AAEC2D00DC09BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB38AFAB22AAEC2E00DC09BE /* LaunchScreen.storyboard in Resources */,
+				AB38AFA822AAEC2E00DC09BE /* Preview Assets.xcassets in Resources */,
+				AB38AFA522AAEC2E00DC09BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB38AFAD22AAEC2F00DC09BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB38AFB822AAEC2F00DC09BE /* Assets.xcassets in Resources */,
+				AB38AFB622AAEC2F00DC09BE /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB38AFBC22AAEC3000DC09BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB38AFCF22AAEC3000DC09BE /* Preview Assets.xcassets in Resources */,
+				AB38AFCC22AAEC3000DC09BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB38AF9922AAEC2D00DC09BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB38AFA322AAEC2D00DC09BE /* ContentView.swift in Sources */,
+				AB38AFA122AAEC2D00DC09BE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB38AFBA22AAEC3000DC09BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB38AFC622AAEC3000DC09BE /* HostingController.swift in Sources */,
+				AB38AFCA22AAEC3000DC09BE /* ComplicationController.swift in Sources */,
+				AB38AFC422AAEC3000DC09BE /* ContentView.swift in Sources */,
+				AB38AFC822AAEC3000DC09BE /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB38AFB222AAEC2F00DC09BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB38AFAE22AAEC2F00DC09BE /* MetroTimer WatchKit App */;
+			targetProxy = AB38AFB122AAEC2F00DC09BE /* PBXContainerItemProxy */;
+		};
+		AB38AFC122AAEC3000DC09BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB38AFBD22AAEC3000DC09BE /* MetroTimer WatchKit Extension */;
+			targetProxy = AB38AFC022AAEC3000DC09BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AB38AFA922AAEC2E00DC09BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB38AFAA22AAEC2E00DC09BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AB38AFB422AAEC2F00DC09BE /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB38AFB522AAEC2F00DC09BE /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB38AFD122AAEC3000DC09BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB38AFD222AAEC3000DC09BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB38AFD422AAEC3000DC09BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MetroTimer WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MetroTimer WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JonasFrey.MetroTimer.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		AB38AFD522AAEC3000DC09BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MetroTimer WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MetroTimer WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JonasFrey.MetroTimer.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		AB38AFD822AAEC3000DC09BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				IBSC_MODULE = MetroTimer_WatchKit_Extension;
+				INFOPLIST_FILE = "MetroTimer WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JonasFrey.MetroTimer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		AB38AFD922AAEC3000DC09BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				IBSC_MODULE = MetroTimer_WatchKit_Extension;
+				INFOPLIST_FILE = "MetroTimer WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JonasFrey.MetroTimer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		AB38AFDC22AAEC3000DC09BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "MetroTimer/Preview\\ Content";
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MetroTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JonasFrey.MetroTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB38AFDD22AAEC3000DC09BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "MetroTimer/Preview\\ Content";
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MetroTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JonasFrey.MetroTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB38AF9822AAEC2D00DC09BE /* Build configuration list for PBXProject "MetroTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB38AFD122AAEC3000DC09BE /* Debug */,
+				AB38AFD222AAEC3000DC09BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB38AFD322AAEC3000DC09BE /* Build configuration list for PBXNativeTarget "MetroTimer WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB38AFD422AAEC3000DC09BE /* Debug */,
+				AB38AFD522AAEC3000DC09BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB38AFD722AAEC3000DC09BE /* Build configuration list for PBXNativeTarget "MetroTimer WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB38AFD822AAEC3000DC09BE /* Debug */,
+				AB38AFD922AAEC3000DC09BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB38AFDB22AAEC3000DC09BE /* Build configuration list for PBXNativeTarget "MetroTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB38AFDC22AAEC3000DC09BE /* Debug */,
+				AB38AFDD22AAEC3000DC09BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB38AF9522AAEC2D00DC09BE /* Project object */;
+}
