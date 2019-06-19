@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB127F6922BA7C2000D9FC4D /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB127F6822BA7C2000D9FC4D /* UserDefaultsWrapper.swift */; };
+		AB127F6C22BA86EA00D9FC4D /* KVVlive in Frameworks */ = {isa = PBXBuildFile; productRef = AB127F6B22BA86EA00D9FC4D /* KVVlive */; };
+		AB12F23A22ABFAAC006F13CC /* JFStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23922ABFAAC006F13CC /* JFStation.swift */; };
+		AB12F23C22ABFBFF006F13CC /* JFTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23B22ABFBFF006F13CC /* JFTrain.swift */; };
+		AB12F23E22ABFCA5006F13CC /* JFDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23D22ABFCA5006F13CC /* JFDeparture.swift */; };
+		AB12F24022AC0956006F13CC /* MetroHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23F22AC0956006F13CC /* MetroHandler.swift */; };
+		AB341E9622AAEE5F004CAD6A /* JFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB341E9522AAEE5F004CAD6A /* JFUtils.swift */; };
+		AB341E9822AAF760004CAD6A /* MetroTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB341E9722AAF760004CAD6A /* MetroTimeCell.swift */; };
 		AB38AFA122AAEC2D00DC09BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */; };
 		AB38AFA322AAEC2D00DC09BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFA222AAEC2D00DC09BE /* ContentView.swift */; };
 		AB38AFA522AAEC2E00DC09BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFA422AAEC2E00DC09BE /* Assets.xcassets */; };
@@ -22,6 +30,9 @@
 		AB38AFCA22AAEC3000DC09BE /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFC922AAEC3000DC09BE /* ComplicationController.swift */; };
 		AB38AFCC22AAEC3000DC09BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFCB22AAEC3000DC09BE /* Assets.xcassets */; };
 		AB38AFCF22AAEC3000DC09BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFCE22AAEC3000DC09BE /* Preview Assets.xcassets */; };
+		AB38AFE422AAEDC100DC09BE /* MetroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFE322AAEDC100DC09BE /* MetroManager.swift */; };
+		AB41B9A522B40DD100A83985 /* DepartureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A422B40DD100A83985 /* DepartureView.swift */; };
+		AB41B9A722B413F700A83985 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A622B413F700A83985 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +78,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB127F6822BA7C2000D9FC4D /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		AB12F23922ABFAAC006F13CC /* JFStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFStation.swift; sourceTree = "<group>"; };
+		AB12F23B22ABFBFF006F13CC /* JFTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTrain.swift; sourceTree = "<group>"; };
+		AB12F23D22ABFCA5006F13CC /* JFDeparture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFDeparture.swift; sourceTree = "<group>"; };
+		AB12F23F22AC0956006F13CC /* MetroHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroHandler.swift; sourceTree = "<group>"; };
+		AB341E9522AAEE5F004CAD6A /* JFUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFUtils.swift; sourceTree = "<group>"; };
+		AB341E9722AAF760004CAD6A /* MetroTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroTimeCell.swift; sourceTree = "<group>"; };
 		AB38AF9D22AAEC2D00DC09BE /* MetroTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB38AFA222AAEC2D00DC09BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +104,9 @@
 		AB38AFCB22AAEC3000DC09BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB38AFCE22AAEC3000DC09BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB38AFD022AAEC3000DC09BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB38AFE322AAEDC100DC09BE /* MetroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MetroManager.swift; path = "MetroTimer/Custom Classes/MetroManager.swift"; sourceTree = SOURCE_ROOT; };
+		AB41B9A422B40DD100A83985 /* DepartureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureView.swift; sourceTree = "<group>"; };
+		AB41B9A622B413F700A83985 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB127F6C22BA86EA00D9FC4D /* KVVlive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +128,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB341E9422AAEE1F004CAD6A /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AB38AFE322AAEDC100DC09BE /* MetroManager.swift */,
+				AB341E9522AAEE5F004CAD6A /* JFUtils.swift */,
+				AB12F23922ABFAAC006F13CC /* JFStation.swift */,
+				AB12F23B22ABFBFF006F13CC /* JFTrain.swift */,
+				AB12F23D22ABFCA5006F13CC /* JFDeparture.swift */,
+				AB12F23F22AC0956006F13CC /* MetroHandler.swift */,
+				AB127F6822BA7C2000D9FC4D /* UserDefaultsWrapper.swift */,
+			);
+			path = "Custom Classes";
+			sourceTree = "<group>";
+		};
 		AB38AF9422AAEC2D00DC09BE = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */,
-				AB38AFA222AAEC2D00DC09BE /* ContentView.swift */,
+				AB341E9422AAEE1F004CAD6A /* Custom Classes */,
+				AB38AFE122AAED6E00DC09BE /* Views */,
 				AB38AFA422AAEC2E00DC09BE /* Assets.xcassets */,
 				AB38AFA922AAEC2E00DC09BE /* LaunchScreen.storyboard */,
 				AB38AFAC22AAEC2E00DC09BE /* Info.plist */,
@@ -179,6 +216,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AB38AFE122AAED6E00DC09BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB38AFA222AAEC2D00DC09BE /* ContentView.swift */,
+				AB41B9A422B40DD100A83985 /* DepartureView.swift */,
+				AB41B9A622B413F700A83985 /* SettingsView.swift */,
+				AB341E9722AAF760004CAD6A /* MetroTimeCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,6 +245,9 @@
 				AB38AFB222AAEC2F00DC09BE /* PBXTargetDependency */,
 			);
 			name = MetroTimer;
+			packageProductDependencies = (
+				AB127F6B22BA86EA00D9FC4D /* KVVlive */,
+			);
 			productName = MetroTimer;
 			productReference = AB38AF9D22AAEC2D00DC09BE /* MetroTimer.app */;
 			productType = "com.apple.product-type.application";
@@ -265,6 +316,9 @@
 				Base,
 			);
 			mainGroup = AB38AF9422AAEC2D00DC09BE;
+			packageReferences = (
+				AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */,
+			);
 			productRefGroup = AB38AF9E22AAEC2D00DC09BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -312,7 +366,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB12F23E22ABFCA5006F13CC /* JFDeparture.swift in Sources */,
+				AB341E9822AAF760004CAD6A /* MetroTimeCell.swift in Sources */,
+				AB12F24022AC0956006F13CC /* MetroHandler.swift in Sources */,
 				AB38AFA322AAEC2D00DC09BE /* ContentView.swift in Sources */,
+				AB12F23C22ABFBFF006F13CC /* JFTrain.swift in Sources */,
+				AB341E9622AAEE5F004CAD6A /* JFUtils.swift in Sources */,
+				AB38AFE422AAEDC100DC09BE /* MetroManager.swift in Sources */,
+				AB12F23A22ABFAAC006F13CC /* JFStation.swift in Sources */,
+				AB41B9A522B40DD100A83985 /* DepartureView.swift in Sources */,
+				AB41B9A722B413F700A83985 /* SettingsView.swift in Sources */,
+				AB127F6922BA7C2000D9FC4D /* UserDefaultsWrapper.swift in Sources */,
 				AB38AFA122AAEC2D00DC09BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +483,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -643,6 +708,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iComputerfreak/kvvliveapi";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB127F6B22BA86EA00D9FC4D /* KVVlive */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */;
+			productName = KVVlive;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB38AF9522AAEC2D00DC09BE /* Project object */;
 }
