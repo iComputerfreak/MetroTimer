@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DepartureView : View {
     
-    @ObjectBinding var metroHandler: MetroHandler
+    @EnvironmentObject var metroHandler: MetroHandler
     
     var stations: [String: [JFDeparture]] {
         .init(grouping: metroHandler.departures,
@@ -46,7 +46,7 @@ struct DepartureView : View {
 #if DEBUG
 struct DepartureView_Previews : PreviewProvider {
     static var previews: some View {
-        DepartureView(metroHandler: MetroHandler())
+        DepartureView().environmentObject(MetroHandler())
     }
 }
 #endif

@@ -29,7 +29,7 @@ class MetroManager: NSObject, CLLocationManagerDelegate {
     public private(set) var departures = [String: [Departure]]()
     
     override init() {
-        favorites = JFUtils.shared.loadFavorites()
+        favorites = Placeholder.favorites
         super.init()
         
         update()

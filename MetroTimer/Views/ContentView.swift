@@ -12,17 +12,26 @@ import Combine
 struct ContentView : View {
     
     var body: some View {
-        
         TabbedView {
-            DepartureView(metroHandler: MetroHandler())
+            DepartureView()
                 .tag(0)
                 // FIXME: Add text
-                .tabItemLabel(Image(systemName: "clock"))
+                .tabItemLabel(Text("Departures"))
+                //.tabItemLabel(Image(systemName: "clock"))
+                /*.tabItemLabel {
+                    Image(systemName: "clock")
+                    Text("Departures")
+                }*/
             
             SettingsView()
                 .tag(1)
                 // FIXME: Add text
-                .tabItemLabel(Image(systemName: "gear"))
+                .tabItemLabel(Text("Settings"))
+                //.tabItemLabel(Image(systemName: "gear"))
+                /*.tabItemLabel {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }*/
         }
     }
 }
@@ -30,7 +39,7 @@ struct ContentView : View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(MetroHandler())
     }
 }
 #endif

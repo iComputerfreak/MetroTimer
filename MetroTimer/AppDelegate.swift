@@ -19,10 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Use a UIHostingController as window root view controller
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIHostingController(rootView: ContentView())
+        let metroHandler = MetroHandler()
+        let rootView = ContentView().environmentObject(metroHandler)
+        window.rootViewController = UIHostingController(rootView: rootView)
+        
+        // Start/stop the udpates when the app closes/opens
+        NotificationCenter.default.addObserver(metroHandler, selector: #selector(MetroHandler.stopUpdates), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(metroHandler, selector: #selector(MetroHandler.startUpdates), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
         self.window = window
         window.makeKeyAndVisible()
-                                    
+        
         return true
     }
 
