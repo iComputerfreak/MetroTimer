@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DepartureView : View {
     
-    @EnvironmentObject var metroHandler: MetroHandler
+    @EnvironmentObject private var metroHandler: MetroHandler
     
     var stations: [String: [JFDeparture]] {
         .init(grouping: metroHandler.departures,

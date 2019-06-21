@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use a UIHostingController as window root view controller
         let window = UIWindow(frame: UIScreen.main.bounds)
         let metroHandler = MetroHandler()
-        let rootView = ContentView().environmentObject(metroHandler)
+        let rootView = HomeView().environmentObject(metroHandler)
         window.rootViewController = UIHostingController(rootView: rootView)
         
         // Start/stop the udpates when the app closes/opens

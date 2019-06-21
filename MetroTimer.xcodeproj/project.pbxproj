@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB127F6922BA7C2000D9FC4D /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB127F6822BA7C2000D9FC4D /* UserDefaultsWrapper.swift */; };
 		AB127F6C22BA86EA00D9FC4D /* KVVlive in Frameworks */ = {isa = PBXBuildFile; productRef = AB127F6B22BA86EA00D9FC4D /* KVVlive */; };
+		AB127F6F22BA960B00D9FC4D /* JFFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB127F6E22BA960B00D9FC4D /* JFFavorite.swift */; };
 		AB12F23A22ABFAAC006F13CC /* JFStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23922ABFAAC006F13CC /* JFStation.swift */; };
 		AB12F23C22ABFBFF006F13CC /* JFTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23B22ABFBFF006F13CC /* JFTrain.swift */; };
 		AB12F23E22ABFCA5006F13CC /* JFDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23D22ABFCA5006F13CC /* JFDeparture.swift */; };
@@ -16,7 +17,7 @@
 		AB341E9622AAEE5F004CAD6A /* JFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB341E9522AAEE5F004CAD6A /* JFUtils.swift */; };
 		AB341E9822AAF760004CAD6A /* MetroTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB341E9722AAF760004CAD6A /* MetroTimeCell.swift */; };
 		AB38AFA122AAEC2D00DC09BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */; };
-		AB38AFA322AAEC2D00DC09BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFA222AAEC2D00DC09BE /* ContentView.swift */; };
+		AB38AFA322AAEC2D00DC09BE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38AFA222AAEC2D00DC09BE /* HomeView.swift */; };
 		AB38AFA522AAEC2E00DC09BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFA422AAEC2E00DC09BE /* Assets.xcassets */; };
 		AB38AFA822AAEC2E00DC09BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFA722AAEC2E00DC09BE /* Preview Assets.xcassets */; };
 		AB38AFAB22AAEC2E00DC09BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFA922AAEC2E00DC09BE /* LaunchScreen.storyboard */; };
@@ -32,6 +33,7 @@
 		AB38AFCF22AAEC3000DC09BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFCE22AAEC3000DC09BE /* Preview Assets.xcassets */; };
 		AB41B9A522B40DD100A83985 /* DepartureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A422B40DD100A83985 /* DepartureView.swift */; };
 		AB41B9A722B413F700A83985 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A622B413F700A83985 /* SettingsView.swift */; };
+		ABC240D722BBBF17001D4B01 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC240D622BBBF17001D4B01 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,7 @@
 /* Begin PBXFileReference section */
 		AB127F6822BA7C2000D9FC4D /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		AB127F6D22BA8B2800D9FC4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AB127F6E22BA960B00D9FC4D /* JFFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFFavorite.swift; sourceTree = "<group>"; };
 		AB12F23922ABFAAC006F13CC /* JFStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFStation.swift; sourceTree = "<group>"; };
 		AB12F23B22ABFBFF006F13CC /* JFTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTrain.swift; sourceTree = "<group>"; };
 		AB12F23D22ABFCA5006F13CC /* JFDeparture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFDeparture.swift; sourceTree = "<group>"; };
@@ -87,7 +90,7 @@
 		AB341E9722AAF760004CAD6A /* MetroTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroTimeCell.swift; sourceTree = "<group>"; };
 		AB38AF9D22AAEC2D00DC09BE /* MetroTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB38AFA222AAEC2D00DC09BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB38AFA222AAEC2D00DC09BE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AB38AFA422AAEC2E00DC09BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB38AFA722AAEC2E00DC09BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB38AFAA22AAEC2E00DC09BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 		AB38AFE322AAEDC100DC09BE /* MetroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MetroManager.swift; path = "MetroTimer/Custom Classes/MetroManager.swift"; sourceTree = SOURCE_ROOT; };
 		AB41B9A422B40DD100A83985 /* DepartureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureView.swift; sourceTree = "<group>"; };
 		AB41B9A622B413F700A83985 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ABC240D622BBBF17001D4B01 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				AB12F23922ABFAAC006F13CC /* JFStation.swift */,
 				AB12F23B22ABFBFF006F13CC /* JFTrain.swift */,
 				AB12F23D22ABFCA5006F13CC /* JFDeparture.swift */,
+				AB127F6E22BA960B00D9FC4D /* JFFavorite.swift */,
 				AB12F23F22AC0956006F13CC /* MetroHandler.swift */,
 				AB127F6822BA7C2000D9FC4D /* UserDefaultsWrapper.swift */,
 			);
@@ -220,9 +225,10 @@
 		AB38AFE122AAED6E00DC09BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB38AFA222AAEC2D00DC09BE /* ContentView.swift */,
+				AB38AFA222AAEC2D00DC09BE /* HomeView.swift */,
 				AB41B9A422B40DD100A83985 /* DepartureView.swift */,
 				AB41B9A622B413F700A83985 /* SettingsView.swift */,
+				ABC240D622BBBF17001D4B01 /* TestView.swift */,
 				AB341E9722AAF760004CAD6A /* MetroTimeCell.swift */,
 			);
 			path = Views;
@@ -370,13 +376,15 @@
 				AB12F23E22ABFCA5006F13CC /* JFDeparture.swift in Sources */,
 				AB341E9822AAF760004CAD6A /* MetroTimeCell.swift in Sources */,
 				AB12F24022AC0956006F13CC /* MetroHandler.swift in Sources */,
-				AB38AFA322AAEC2D00DC09BE /* ContentView.swift in Sources */,
+				AB38AFA322AAEC2D00DC09BE /* HomeView.swift in Sources */,
 				AB12F23C22ABFBFF006F13CC /* JFTrain.swift in Sources */,
 				AB341E9622AAEE5F004CAD6A /* JFUtils.swift in Sources */,
 				AB12F23A22ABFAAC006F13CC /* JFStation.swift in Sources */,
+				AB127F6F22BA960B00D9FC4D /* JFFavorite.swift in Sources */,
 				AB41B9A522B40DD100A83985 /* DepartureView.swift in Sources */,
 				AB41B9A722B413F700A83985 /* SettingsView.swift in Sources */,
 				AB127F6922BA7C2000D9FC4D /* UserDefaultsWrapper.swift in Sources */,
+				ABC240D722BBBF17001D4B01 /* TestView.swift in Sources */,
 				AB38AFA122AAEC2D00DC09BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

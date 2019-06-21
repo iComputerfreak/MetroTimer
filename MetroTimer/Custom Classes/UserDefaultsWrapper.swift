@@ -9,8 +9,6 @@
 import Foundation
 import SwiftUI
 
-typealias JFFavorite = (station: JFStation, train: JFTrain)
-
 @propertyWrapper
 struct UserDefault<T> {
     let key: String

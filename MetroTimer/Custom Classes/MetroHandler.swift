@@ -83,9 +83,9 @@ struct Placeholder {
     ]
     
     static let favorites: [JFFavorite] = [
-        (ottoSachs, train1),
-        (durlacherTor, train2),
-        (kronenplatz, train2)
+        JFFavorite(station: ottoSachs, train: train1),
+        JFFavorite(station: durlacherTor, train: train2),
+        JFFavorite(station: kronenplatz, train: train2)
     ]
     
 }
