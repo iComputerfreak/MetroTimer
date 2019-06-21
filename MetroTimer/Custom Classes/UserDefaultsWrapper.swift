@@ -24,7 +24,8 @@ struct UserDefault<T> {
             return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: key)
+            // FIXME: Add this after confirming JFFavorite to property-list
+            //UserDefaults.standard.set(newValue, forKey: key)
         }
     }
 }

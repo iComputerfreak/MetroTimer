@@ -34,6 +34,7 @@
 		AB41B9A522B40DD100A83985 /* DepartureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A422B40DD100A83985 /* DepartureView.swift */; };
 		AB41B9A722B413F700A83985 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A622B413F700A83985 /* SettingsView.swift */; };
 		ABC240D722BBBF17001D4B01 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC240D622BBBF17001D4B01 /* TestView.swift */; };
+		ABC2414322BD134E001D4B01 /* AddFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		AB41B9A422B40DD100A83985 /* DepartureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureView.swift; sourceTree = "<group>"; };
 		AB41B9A622B413F700A83985 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		ABC240D622BBBF17001D4B01 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				AB38AFA222AAEC2D00DC09BE /* HomeView.swift */,
 				AB41B9A422B40DD100A83985 /* DepartureView.swift */,
 				AB41B9A622B413F700A83985 /* SettingsView.swift */,
+				ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */,
 				ABC240D622BBBF17001D4B01 /* TestView.swift */,
 				AB341E9722AAF760004CAD6A /* MetroTimeCell.swift */,
 			);
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB12F23E22ABFCA5006F13CC /* JFDeparture.swift in Sources */,
+				ABC2414322BD134E001D4B01 /* AddFavoriteView.swift in Sources */,
 				AB341E9822AAF760004CAD6A /* MetroTimeCell.swift in Sources */,
 				AB12F24022AC0956006F13CC /* MetroHandler.swift in Sources */,
 				AB38AFA322AAEC2D00DC09BE /* HomeView.swift in Sources */,

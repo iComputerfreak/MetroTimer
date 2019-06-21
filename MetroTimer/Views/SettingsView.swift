@@ -11,23 +11,18 @@ import SwiftUI
 struct SettingsView : View {
     
     @EnvironmentObject private var metroHandler: MetroHandler
-    @State var draftFavorites: [JFFavorite] = Placeholder.favorites
-    
-    init() {
-        print("Initialized")
-        self.draftFavorites = metroHandler.favorites
-    }
+    @Environment(\.editMode) var mode
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Favorites")) {
-                    ForEach(self.draftFavorites.identified(by: \.self)) { (favorite: JFFavorite) in
+                    ForEach(self.metroHandler.favorites.identified(by: \.self)) { (favorite: JFFavorite) in
                         FavoriteCell(favorite: favorite)
                     }
                     .onDelete { indexSet in
                         indexSet.forEach({ i in
-                            self.draftFavorites.remove(at: i)
+                            self.metroHandler.favorites.remove(at: i)
                         })
                     }
                     .onMove { (source, destination) in
@@ -36,15 +31,32 @@ struct SettingsView : View {
                         
                         for index in reversedSource {
                             // for each item, remove it and insert it at the destination
-                            self.draftFavorites.insert(self.draftFavorites.remove(at: index), at: destination)
+                            self.metroHandler.favorites.insert(self.metroHandler.favorites.remove(at: index), at: destination)
                         }
                     }
+                    
+                    // FIXME: Currently editMode cannot be read inside Forms/Lists!
+                    //if mode!.value != .inactive {
+                    NavigationButton(destination: AddFavoriteView(), isDetail: true) {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "plus.circle")
+                            Text("Add Favorite")
+                            Spacer()
+                        }
+                    }
+                    //}
                 }
             }
             
-            .navigationBarItems(trailing: EditButton())
+                .navigationBarItems(trailing: EditButton())
                 .navigationBarTitle(Text("Settings"), displayMode: .inline)
         }
+        
+            // When the SettingsView appears
+            .onAppear {
+                print("Appearing")
+            }
     }
     
     struct FavoriteCell: View {
