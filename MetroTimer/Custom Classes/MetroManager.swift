@@ -10,6 +10,12 @@ import Foundation
 import KVVlive
 import CoreLocation
 
+
+/*
+ * This class is no longer used. Its functionality will be moved to the MetroHandler class.
+ * This file is removed from the build process.
+ */
+
 class MetroManager: NSObject, CLLocationManagerDelegate {
     
     typealias FavoriteStop = (stop: Stop, route: String, direction: Int)

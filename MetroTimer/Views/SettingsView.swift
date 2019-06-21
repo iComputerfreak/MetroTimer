@@ -25,6 +25,7 @@ struct SettingsView : View {
                             self.metroHandler.favorites.remove(at: i)
                         })
                     }
+                    // FIXME: After pressing Done, the sorting order reverts
                     .onMove { (source, destination) in
                         // sort the indexes high to low
                         let reversedSource = source.sorted().reversed()

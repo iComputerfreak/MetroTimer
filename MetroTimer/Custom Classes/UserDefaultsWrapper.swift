@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+/// Represents a property wrapper that provides read/write access to a value stored in UserDefaults
 @propertyWrapper
 struct UserDefault<T> where T: Codable {
     
@@ -16,6 +17,11 @@ struct UserDefault<T> where T: Codable {
     let defaultValue: T
     let encoded: Bool
     
+    /// Creates a new UserDefault Wrapper
+    /// - Parameters:
+    ///   - key: The key to use for the UserDefaults
+    ///   - defaultValue: The default value to return, when no value is set in the UserDefaults
+    ///   - encoded: Whether to automatically encode the value with a PropertyListEncoder before saving it in the UserDefaults
     init(_ key: String, defaultValue: T, encoded: Bool = false) {
         self.key = key
         self.defaultValue = defaultValue

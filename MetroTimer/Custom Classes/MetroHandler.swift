@@ -26,6 +26,7 @@ class MetroHandler: BindableObject {
     @UserDefault("favorites", defaultValue: Placeholder.favorites, encoded: true)
     var favorites: [JFFavorite]
     
+    /// The next departures for the favorites
     var departures = [JFDeparture]() {
         didSet {
             didChange.send(self.departures)
@@ -44,12 +45,14 @@ class MetroHandler: BindableObject {
         updateTimer?.fire()
     }
     
+    /// Stops the update timer
     @objc func stopUpdates() {
         print("Stopping updates")
         updateTimer?.invalidate()
         updateTimer = nil
     }
     
+    /// Manually refreshes the departure data
     @objc func refreshData() {
         let request = Request()
         self.departures = []
