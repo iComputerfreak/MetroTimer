@@ -10,22 +10,37 @@ import Foundation
 import SwiftUI
 
 @propertyWrapper
-struct UserDefault<T> {
+struct UserDefault<T> where T: Codable {
+    
     let key: String
     let defaultValue: T
+    let encoded: Bool
     
-    init(_ key: String, defaultValue: T) {
+    init(_ key: String, defaultValue: T, encoded: Bool = false) {
         self.key = key
         self.defaultValue = defaultValue
+        self.encoded = encoded
     }
     
     var value: T {
         get {
-            return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
+            if encoded {
+                if let data = UserDefaults.standard.data(forKey: key) {
+                    if let value = try? PropertyListDecoder().decode(T.self, from: data) {
+                        return value
+                    }
+                }
+                return defaultValue
+            } else {
+                return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
+            }
         }
         set {
-            // FIXME: Add this after confirming JFFavorite to property-list
-            //UserDefaults.standard.set(newValue, forKey: key)
+            if encoded {
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: key)
+            } else {
+                UserDefaults.standard.set(newValue, forKey: key)
+            }
         }
     }
 }

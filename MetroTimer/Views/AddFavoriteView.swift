@@ -22,7 +22,7 @@ struct AddFavoriteView : View {
                 guard !stillEditing else {
                     return
                 }
-                guard !searchText.isEmpty else {
+                guard !self.searchText.isEmpty else {
                     return
                 }
                 print("Searching for \(self.searchText)")

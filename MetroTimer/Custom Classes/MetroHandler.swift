@@ -23,7 +23,7 @@ class MetroHandler: BindableObject {
     // Load the value from the UserDefaults or use the default value
     // TODO: Remove this debug value
     //@UserDefault("favorites", defaultValue: [JFFavorite]())
-    @UserDefault("favorites", defaultValue: Placeholder.favorites)
+    @UserDefault("favorites", defaultValue: Placeholder.favorites, encoded: true)
     var favorites: [JFFavorite]
     
     var departures = [JFDeparture]() {

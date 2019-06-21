@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct JFTrain: Equatable, Hashable {
+struct JFTrain: Equatable, Hashable, Codable {
     var route: String
     var destination: String
 }

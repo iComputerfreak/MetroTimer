@@ -9,13 +9,13 @@
 import Foundation
 import SwiftUI
 
-struct JFStation: Identifiable, Equatable, Hashable {
+struct JFStation: Identifiable, Equatable, Hashable, Codable {
     var id: String
     var name: String
     var coordinates: JFCoordinates
 }
 
-struct JFCoordinates: Equatable, Hashable {
+struct JFCoordinates: Equatable, Hashable, Codable {
     var lat: Double
     var lon: Double
 }

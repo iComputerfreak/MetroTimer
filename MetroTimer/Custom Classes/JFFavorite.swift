@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct JFFavorite: Hashable {
+struct JFFavorite: Hashable, Codable {
     
     let station: JFStation
     let train: JFTrain
