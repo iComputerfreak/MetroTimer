@@ -9,8 +9,33 @@
 import SwiftUI
 
 struct ContentView : View {
+    
+    let maxInfosPerSection = 2
+    
+    @EnvironmentObject var metroHandler: MetroHandler
+    
+    func viewDidAppear() {
+        metroHandler.startUpdates()
+    }
+    
+    func viewDidDisappear() {
+        metroHandler.stopUpdates()
+    }
+    
     var body: some View {
-        Text("Hello World")
+        List {
+            // Create a section for every station
+            ForEach(metroHandler.stations.keys.sorted().identified(by: \.self)) { stationName in
+                Section(header: Text(stationName)) {
+                    // Show the first three departures for each station
+                    ForEach(self.metroHandler.stations[stationName]!.prefix(self.maxInfosPerSection).identified(by: \.self)) { (departure: JFDeparture) in
+                        Text(departure.train.destination) //MetroTimeCell(train: departure.train, timeString: departure.timeString)
+                    }
+                }
+            }
+        }
+        .onAppear(perform: viewDidAppear)
+        .onDisappear(perform: viewDidDisappear)
     }
 }
 

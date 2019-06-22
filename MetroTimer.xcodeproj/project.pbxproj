@@ -35,6 +35,14 @@
 		AB41B9A722B413F700A83985 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A622B413F700A83985 /* SettingsView.swift */; };
 		ABC240D722BBBF17001D4B01 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC240D622BBBF17001D4B01 /* TestView.swift */; };
 		ABC2414322BD134E001D4B01 /* AddFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */; };
+		ABC2415422BE63C4001D4B01 /* MetroHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23F22AC0956006F13CC /* MetroHandler.swift */; };
+		ABC2415622BE63EA001D4B01 /* JFStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23922ABFAAC006F13CC /* JFStation.swift */; };
+		ABC2415722BE63EA001D4B01 /* JFTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23B22ABFBFF006F13CC /* JFTrain.swift */; };
+		ABC2415822BE63EA001D4B01 /* JFDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23D22ABFCA5006F13CC /* JFDeparture.swift */; };
+		ABC2415922BE63EA001D4B01 /* JFFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB127F6E22BA960B00D9FC4D /* JFFavorite.swift */; };
+		ABC2415A22BE641D001D4B01 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB127F6822BA7C2000D9FC4D /* UserDefaultsWrapper.swift */; };
+		ABC2415B22BE6433001D4B01 /* JFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB341E9522AAEE5F004CAD6A /* JFUtils.swift */; };
+		ABC2415E22BE645F001D4B01 /* KVVlive in Frameworks */ = {isa = PBXBuildFile; productRef = ABC2415D22BE645F001D4B01 /* KVVlive */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC2415E22BE645F001D4B01 /* KVVlive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,10 +148,6 @@
 			children = (
 				AB38AFE322AAEDC100DC09BE /* MetroManager.swift */,
 				AB341E9522AAEE5F004CAD6A /* JFUtils.swift */,
-				AB12F23922ABFAAC006F13CC /* JFStation.swift */,
-				AB12F23B22ABFBFF006F13CC /* JFTrain.swift */,
-				AB12F23D22ABFCA5006F13CC /* JFDeparture.swift */,
-				AB127F6E22BA960B00D9FC4D /* JFFavorite.swift */,
 				AB12F23F22AC0956006F13CC /* MetroHandler.swift */,
 				AB127F6822BA7C2000D9FC4D /* UserDefaultsWrapper.swift */,
 			);
@@ -153,10 +158,12 @@
 			isa = PBXGroup;
 			children = (
 				AB127F6D22BA8B2800D9FC4D /* README.md */,
+				ABC2415522BE63DF001D4B01 /* Models */,
 				AB38AF9F22AAEC2D00DC09BE /* MetroTimer */,
 				AB38AFB322AAEC2F00DC09BE /* MetroTimer WatchKit App */,
 				AB38AFC222AAEC3000DC09BE /* MetroTimer WatchKit Extension */,
 				AB38AF9E22AAEC2D00DC09BE /* Products */,
+				ABC2415C22BE645F001D4B01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */,
-				AB341E9422AAEE1F004CAD6A /* Custom Classes */,
 				AB38AFE122AAED6E00DC09BE /* Views */,
 				AB38AFA422AAEC2E00DC09BE /* Assets.xcassets */,
 				AB38AFA922AAEC2E00DC09BE /* LaunchScreen.storyboard */,
@@ -237,6 +243,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		ABC2415522BE63DF001D4B01 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB12F23922ABFAAC006F13CC /* JFStation.swift */,
+				AB12F23B22ABFBFF006F13CC /* JFTrain.swift */,
+				AB12F23D22ABFCA5006F13CC /* JFDeparture.swift */,
+				AB127F6E22BA960B00D9FC4D /* JFFavorite.swift */,
+				AB341E9422AAEE1F004CAD6A /* Custom Classes */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ABC2415C22BE645F001D4B01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,6 +317,9 @@
 			dependencies = (
 			);
 			name = "MetroTimer WatchKit Extension";
+			packageProductDependencies = (
+				ABC2415D22BE645F001D4B01 /* KVVlive */,
+			);
 			productName = "MetroTimer WatchKit Extension";
 			productReference = AB38AFBE22AAEC3000DC09BE /* MetroTimer WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -397,7 +425,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC2415822BE63EA001D4B01 /* JFDeparture.swift in Sources */,
+				ABC2415922BE63EA001D4B01 /* JFFavorite.swift in Sources */,
+				ABC2415722BE63EA001D4B01 /* JFTrain.swift in Sources */,
+				ABC2415422BE63C4001D4B01 /* MetroHandler.swift in Sources */,
 				AB38AFC622AAEC3000DC09BE /* HostingController.swift in Sources */,
+				ABC2415B22BE6433001D4B01 /* JFUtils.swift in Sources */,
+				ABC2415622BE63EA001D4B01 /* JFStation.swift in Sources */,
+				ABC2415A22BE641D001D4B01 /* UserDefaultsWrapper.swift in Sources */,
 				AB38AFCA22AAEC3000DC09BE /* ComplicationController.swift in Sources */,
 				AB38AFC422AAEC3000DC09BE /* ContentView.swift in Sources */,
 				AB38AFC822AAEC3000DC09BE /* ExtensionDelegate.swift in Sources */,
@@ -734,6 +769,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		AB127F6B22BA86EA00D9FC4D /* KVVlive */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */;
+			productName = KVVlive;
+		};
+		ABC2415D22BE645F001D4B01 /* KVVlive */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */;
 			productName = KVVlive;

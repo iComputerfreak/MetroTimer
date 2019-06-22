@@ -33,6 +33,11 @@ class MetroHandler: BindableObject {
         }
     }
     
+    var stations: [String: [JFDeparture]] {
+        .init(grouping: self.departures,
+              by: { $0.station.name })
+    }
+    
     /// Starts the update timer and immediately fires the first update
     @objc func startUpdates() {
         // If already running, do nothing
@@ -55,16 +60,17 @@ class MetroHandler: BindableObject {
     /// Manually refreshes the departure data
     @objc func refreshData() {
         let request = Request()
-        self.departures = []
+        var departures = [JFDeparture]()
         // Get the data
         for favorite in favorites {
             print("Getting departures for \(favorite.station.name)")
             request.getDepartures(route: favorite.train.route, stopId: favorite.station.id) { deps in
                 // Filter out the wrong destinations
                 let favoriteDeps = deps.filter({ $0.destination == favorite.train.destination })
-                self.departures.append(contentsOf: favoriteDeps.map({ JFDeparture(from: $0, station: favorite.station) }))
+                departures.append(contentsOf: favoriteDeps.map({ JFDeparture(from: $0, station: favorite.station) }))
             }
         }
+        self.departures = departures
     }
     
 }
