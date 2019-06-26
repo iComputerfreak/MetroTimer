@@ -12,7 +12,7 @@ struct DepartureView : View {
     
     let maxInfosPerSection = 3
     
-    @EnvironmentObject private var metroHandler: MetroHandler
+    let metroHandler = MetroHandler.shared
     
     func viewDidAppear() {
         self.metroHandler.startUpdates()
@@ -55,7 +55,7 @@ struct DepartureView : View {
 #if DEBUG
 struct DepartureView_Previews : PreviewProvider {
     static var previews: some View {
-        DepartureView().environmentObject(MetroHandler())
+        DepartureView()
     }
 }
 #endif

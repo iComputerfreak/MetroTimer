@@ -15,6 +15,10 @@ class MetroHandler: BindableObject {
     typealias PublisherType = PassthroughSubject<[JFDeparture], Never>
     var didChange = PassthroughSubject<[JFDeparture], Never>()
     
+    static let shared = MetroHandler()
+    
+    private init() {}
+    
     /// The time interval in which the timer tries to update the data
     let updateInterval: TimeInterval = 30
     /// The timer that updates the departures

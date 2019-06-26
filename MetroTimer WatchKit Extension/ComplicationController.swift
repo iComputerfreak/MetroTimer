@@ -33,7 +33,26 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        handler(nil)
+        
+        // TODO: Showing the time on the watch complication requires too many updates
+        
+        let metroHandler = MetroHandler.shared
+        metroHandler.startUpdates()
+        guard let dep = metroHandler.departures.first else {
+            print("ERROR")
+            return
+        }
+        
+        switch complication.family {
+        case .modularSmall:
+            let template = CLKComplicationTemplateModularSmallSimpleText()
+            template.textProvider = CLKSimpleTextProvider(text: dep.timeString)
+            handler(CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template))
+            return
+        default:
+            handler(nil)
+            return
+        }
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {

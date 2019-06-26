@@ -11,7 +11,6 @@ import KVVlive
 
 struct AddFavoriteView : View {
     
-    @EnvironmentObject var metroHandler: MetroHandler
     @State var searchText: String = ""
     @State var searchResults: [JFStation] = []
     

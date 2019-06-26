@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SettingsView : View {
     
-    @EnvironmentObject private var metroHandler: MetroHandler
+    let metroHandler = MetroHandler.shared
     @Environment(\.editMode) var mode
     
     var body: some View {
