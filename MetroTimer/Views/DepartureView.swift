@@ -7,12 +7,14 @@
 //
 
 import SwiftUI
+import JFSwiftUI
 
 struct DepartureView : View {
     
-    let maxInfosPerSection = 3
+    @UserDefault(JFLiterals.Keys.maxInfosPerStation.rawValue, defaultValue: 3)
+    var maxInfosPerSection: Int
     
-    let metroHandler = MetroHandler.shared
+    @State private var metroHandler = MetroHandler.shared
     
     func viewDidAppear() {
         self.metroHandler.startUpdates()
@@ -21,34 +23,58 @@ struct DepartureView : View {
     func viewDidDisappear() {
         self.metroHandler.stopUpdates()
     }
-    
+        
     var body: some View {
         NavigationView {
-            List {
-                // Create a section for every station
-                ForEach(self.metroHandler.stations.keys.sorted().identified(by: \.self)) { stationName in
-                    Section(header: Text(stationName)) {
-                        // Show the first three departures for each station
-                        ForEach(self.metroHandler.stations[stationName]!.prefix(self.maxInfosPerSection).identified(by: \.self)) { (departure: JFDeparture) in
-                            MetroTimeCell(train: departure.train, timeString: departure.timeString)
-                        }
-                    }
+            if self.metroHandler.departures.isEmpty {
+                // Loading Screen
+                HStack {
+                    ActivityIndicator(style: .medium)
+                    Text("Loading...")
+                        .font(.headline)
                 }
-            }
+                    .navigationBarTitle(Text("Departures"))
+                    .navigationBarItems(trailing:
+                        Button(action: {
+                            self.metroHandler.stopUpdates()
+                            self.metroHandler.startUpdates()
+                        }) {
+                            Text("Retry")
+                        }
+                    )
                 
-                .navigationBarTitle(Text("Departures"))
-                .navigationBarItems(trailing:
-                    Button(action: {
-                        self.metroHandler.refreshData()
-                    }) {
-                        Text("Refresh")
-                    }
-            )
+            } else {
+                // Actual content
+                self.departuresList
+                    .navigationBarTitle(Text("Departures"))
+                    .navigationBarItems(trailing:
+                        Button(action: {
+                            self.metroHandler.refreshData()
+                        }) {
+                            Text("Refresh")
+                        }
+                    )
+            }
         }
+            
             // Start updates on appear
             .onAppear(perform: viewDidAppear)
             // Stop updates on disappear
             .onDisappear(perform: viewDidDisappear)
+    }
+    
+    var departuresList: some View {
+        List {
+            // Create a section for every station
+            ForEach(self.metroHandler.stations.keys.sorted().identified(by: \.self)) { stationName in
+                Section(header: Text(stationName)) {
+                    // Show the first three departures for each station
+                    ForEach(self.metroHandler.stations[stationName]!.prefix(self.maxInfosPerSection).identified(by: \.self)) { (departure: JFDeparture) in
+                        MetroTimeCell(train: departure.train, timeString: departure.timeString)
+                    }
+                }
+            }
+        }
     }
 }
 

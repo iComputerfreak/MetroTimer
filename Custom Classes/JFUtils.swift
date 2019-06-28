@@ -9,7 +9,7 @@
 import Foundation
 
 /// A set of utility functions
-class JFUtils {
+struct JFUtils {
     
     public static let shared = JFUtils()
     
@@ -32,6 +32,16 @@ class JFUtils {
     /// - Returns: The distance of the two points
     static func distance(from: JFCoordinates, to: JFCoordinates) -> Double {
         return sqrt(distanceSquared(from: from, to: to))
+    }
+    
+}
+
+struct JFLiterals {
+    
+    static let maxInfosPerStation = 3
+    
+    enum Keys: String {
+        case maxInfosPerStation = "maxInfosPerStation"
     }
     
 }

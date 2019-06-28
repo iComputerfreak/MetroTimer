@@ -7,11 +7,21 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SettingsView : View {
     
-    let metroHandler = MetroHandler.shared
+    @State private var metroHandler = MetroHandler.shared
     @Environment(\.editMode) var mode
+    
+    @State private var maxInfosPerStation: Int = {
+        let stored = UserDefaults.standard.integer(forKey: JFLiterals.Keys.maxInfosPerStation.rawValue)
+        return stored > 0 ? stored : JFLiterals.maxInfosPerStation
+    }()
+    
+    func didAppear() {
+        
+    }
     
     var body: some View {
         NavigationView {
@@ -37,16 +47,24 @@ struct SettingsView : View {
                     }
                     
                     // FIXME: Currently editMode cannot be read inside Forms/Lists!
-                    //if mode!.value != .inactive {
-                    NavigationButton(destination: AddFavoriteView(), isDetail: true) {
-                        HStack {
-                            Spacer()
-                            Image(systemName: "plus.circle")
-                            Text("Add Favorite")
-                            Spacer()
-                        }
-                    }
-                    //}
+//                    if mode!.value != .inactive {
+//                        NavigationButton(destination: AddFavoriteView()) {
+//                            HStack {
+//                                Spacer()
+//                                Image(systemName: "plus.circle")
+//                                Text("Add Favorite")
+//                                Spacer()
+//                            }
+//                        }
+//                    }
+                }
+                
+                Section(header: Text("Maximum lines per station")) {
+                    Stepper(value: $maxInfosPerStation, in: 1...10, step: 1, onEditingChanged: { _ in
+                        UserDefaults.standard.set(self.maxInfosPerStation, forKey: JFLiterals.Keys.maxInfosPerStation.rawValue)
+                    }, label: {
+                        Text("Entries per Station: \(self.maxInfosPerStation)")
+                    })
                 }
             }
             
@@ -55,9 +73,7 @@ struct SettingsView : View {
         }
         
             // When the SettingsView appears
-            .onAppear {
-                print("Appearing")
-            }
+            .onAppear(perform: self.didAppear)
     }
     
     struct FavoriteCell: View {

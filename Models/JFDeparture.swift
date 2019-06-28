@@ -29,7 +29,11 @@ struct JFDeparture: Equatable, Hashable {
     init(train: JFTrain, station: JFStation, timeString: String) {
         self.train = train
         self.station = station
-        self.timeString = timeString
+        if timeString == "0" {
+            self.timeString = "now"
+        } else {
+            self.timeString = timeString
+        }
     }
     
     /// Creates a new JFDeparture from a Departure

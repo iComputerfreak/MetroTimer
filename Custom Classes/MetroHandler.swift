@@ -12,8 +12,8 @@ import KVVlive
 import Combine
 
 class MetroHandler: BindableObject {
-    typealias PublisherType = PassthroughSubject<[JFDeparture], Never>
-    var didChange = PassthroughSubject<[JFDeparture], Never>()
+    typealias PublisherType = PassthroughSubject<Void, Never>
+    var didChange = PassthroughSubject<Void, Never>()
     
     static let shared = MetroHandler()
     
@@ -28,12 +28,16 @@ class MetroHandler: BindableObject {
     // TODO: Remove this debug value
     //@UserDefault("favorites", defaultValue: [JFFavorite]())
     @UserDefault("favorites", defaultValue: Placeholder.favorites, encoded: true)
-    var favorites: [JFFavorite]
+    var favorites: [JFFavorite] {
+        didSet {
+            didChange.send()
+        }
+    }
     
     /// The next departures for the favorites
     var departures = [JFDeparture]() {
         didSet {
-            didChange.send(self.departures)
+            didChange.send()
         }
     }
     
@@ -61,20 +65,23 @@ class MetroHandler: BindableObject {
         updateTimer = nil
     }
     
-    /// Manually refreshes the departure data
+    /// Manually refreshes the departure data asyc
     @objc func refreshData() {
-        let request = Request()
-        var departures = [JFDeparture]()
-        // Get the data
-        for favorite in favorites {
-            print("Getting departures for \(favorite.station.name)")
-            request.getDepartures(route: favorite.train.route, stopId: favorite.station.id) { deps in
-                // Filter out the wrong destinations
-                let favoriteDeps = deps.filter({ $0.destination == favorite.train.destination })
-                departures.append(contentsOf: favoriteDeps.map({ JFDeparture(from: $0, station: favorite.station) }))
+        DispatchQueue.main.async {
+            let request = Request()
+            var departures = [JFDeparture]()
+            // Get the data
+            for favorite in self.favorites {
+                print("Getting departures for \(favorite.station.name)")
+                request.getDepartures(route: favorite.train.route, stopId: favorite.station.id) { deps in
+                    // Filter out the wrong destinations
+                    let favoriteDeps = deps.filter({ $0.destination == favorite.train.destination })
+                    departures.append(contentsOf: favoriteDeps.map({ JFDeparture(from: $0, station: favorite.station) }))
+                }
             }
+            
+            self.departures = departures
         }
-        self.departures = departures
     }
     
 }

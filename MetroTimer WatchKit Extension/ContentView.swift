@@ -12,7 +12,7 @@ struct ContentView : View {
     
     let maxInfosPerSection = 2
     
-    let metroHandler = MetroHandler.shared
+    @State private var metroHandler = MetroHandler.shared
     
     func viewDidAppear() {
         metroHandler.startUpdates()

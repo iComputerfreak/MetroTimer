@@ -8,6 +8,7 @@
 
 import SwiftUI
 import KVVlive
+import JFSwiftUI
 
 struct AddFavoriteView : View {
     
@@ -16,25 +17,24 @@ struct AddFavoriteView : View {
     
     var body: some View {
         VStack {
-            // FIXME: Replace onEditingChanged: with onCommit:
-            TextField($searchText, placeholder: Text("Search"), onEditingChanged: { stillEditing in
-                guard !stillEditing else {
-                    return
-                }
+            SearchBar(text: $searchText, onSearchEditingChanged: {
                 guard !self.searchText.isEmpty else {
                     return
                 }
                 print("Searching for \(self.searchText)")
-                
                 self.updateSearchResults()
             })
-                .padding(5.0)
-                .border(Color.black, width: 2.0, cornerRadius: 5.0)
-            
-            // FIXME: Add list with search results
-            //List(searchResults, selection: nil, action: { print("Action") }, rowContent: { Text("Content") })
+            List {
+                ForEach(searchResults) { station in
+                    Button(action: {
+                        // FIXME: Go to new view here to select line and direction and then pop back to the SettingsView
+                        print("Back")
+                    }) {
+                        Text(station.name)
+                    }
+                }
+            }
         }
-        .padding()
     }
     
     
