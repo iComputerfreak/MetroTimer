@@ -17,10 +17,12 @@ struct DepartureView : View {
     @State private var metroHandler = MetroHandler.shared
     
     func viewDidAppear() {
+        print("View did appear")
         self.metroHandler.startUpdates()
     }
     
     func viewDidDisappear() {
+        print("View did disappear")
         self.metroHandler.stopUpdates()
     }
         
@@ -42,7 +44,6 @@ struct DepartureView : View {
                             Text("Retry")
                         }
                     )
-                
             } else {
                 // Actual content
                 self.departuresList
@@ -66,7 +67,12 @@ struct DepartureView : View {
     var departuresList: some View {
         List {
             // Create a section for every station
-            ForEach(self.metroHandler.stations.keys.sorted().identified(by: \.self)) { stationName in
+            ForEach(self.metroHandler.stations.keys.sorted(by: { (key1, key2) -> Bool in
+                let favoriteNames = self.metroHandler.favorites.map({ $0.station.name })
+                let index1 = favoriteNames.firstIndex(of: key1)!
+                let index2 = favoriteNames.firstIndex(of: key2)!
+                return index1 < index2
+            }).identified(by: \.self)) { stationName in
                 Section(header: Text(stationName)) {
                     // Show the first three departures for each station
                     ForEach(self.metroHandler.stations[stationName]!.prefix(self.maxInfosPerSection).identified(by: \.self)) { (departure: JFDeparture) in

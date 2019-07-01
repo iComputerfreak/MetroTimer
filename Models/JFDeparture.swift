@@ -10,7 +10,7 @@ import Foundation
 import KVVlive
 
 /// Represents a departure of a train at a specific station at a given time
-struct JFDeparture: Equatable, Hashable {
+struct JFDeparture: Equatable, Hashable, CustomStringConvertible {
     var train: JFTrain
     var station: JFStation
     /// The time in a human readable format
@@ -20,6 +20,10 @@ struct JFDeparture: Equatable, Hashable {
     ///    "7 min"
     ///    "15:30"
     var timeString: String
+    
+    var description: String {
+        return "[\(train.route)] \(train.destination) at \(station.name) " + (timeString == "now" ? timeString : "in \(timeString)")
+    }
     
     /// Creates a new departure
     /// - Parameters:

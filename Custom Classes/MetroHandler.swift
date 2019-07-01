@@ -42,8 +42,7 @@ class MetroHandler: BindableObject {
     }
     
     var stations: [String: [JFDeparture]] {
-        .init(grouping: self.departures,
-              by: { $0.station.name })
+        .init(grouping: self.departures, by: { $0.station.name })
     }
     
     /// Starts the update timer and immediately fires the first update
@@ -68,6 +67,7 @@ class MetroHandler: BindableObject {
     /// Manually refreshes the departure data asyc
     @objc func refreshData() {
         DispatchQueue.main.async {
+            print("Starting update")
             let request = Request()
             var departures = [JFDeparture]()
             // Get the data
@@ -81,6 +81,7 @@ class MetroHandler: BindableObject {
             }
             
             self.departures = departures
+            print("Update finished")
         }
     }
     
