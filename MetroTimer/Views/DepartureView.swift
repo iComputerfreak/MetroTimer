@@ -14,7 +14,7 @@ struct DepartureView : View {
     @UserDefault(JFLiterals.Keys.maxInfosPerStation.rawValue, defaultValue: 3)
     var maxInfosPerSection: Int
     
-    @State private var metroHandler = MetroHandler.shared
+    @ObservedObject private var metroHandler = MetroHandler.shared
     
     func viewDidAppear() {
         print("View did appear")
@@ -25,7 +25,7 @@ struct DepartureView : View {
         print("View did disappear")
         self.metroHandler.stopUpdates()
     }
-        
+    
     var body: some View {
         NavigationView {
             if self.metroHandler.departures.isEmpty {
@@ -35,15 +35,15 @@ struct DepartureView : View {
                     Text("Loading...")
                         .font(.headline)
                 }
-                    .navigationBarTitle(Text("Departures"))
-                    .navigationBarItems(trailing:
-                        Button(action: {
-                            self.metroHandler.stopUpdates()
-                            self.metroHandler.startUpdates()
-                        }) {
-                            Text("Retry")
-                        }
-                    )
+                .navigationBarTitle(Text("Departures"))
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        self.metroHandler.stopUpdates()
+                        self.metroHandler.startUpdates()
+                    }) {
+                        Text("Retry")
+                    }
+                )
             } else {
                 // Actual content
                 self.departuresList
@@ -54,7 +54,7 @@ struct DepartureView : View {
                         }) {
                             Text("Refresh")
                         }
-                    )
+                )
             }
         }
             
@@ -66,16 +66,17 @@ struct DepartureView : View {
     
     var departuresList: some View {
         List {
-            // Create a section for every station
             ForEach(self.metroHandler.stations.keys.sorted(by: { (key1, key2) -> Bool in
+                // Sort the stations like the favorites
                 let favoriteNames = self.metroHandler.favorites.map({ $0.station.name })
                 let index1 = favoriteNames.firstIndex(of: key1)!
                 let index2 = favoriteNames.firstIndex(of: key2)!
                 return index1 < index2
-            }).identified(by: \.self)) { stationName in
+            }), id: \.self) { stationName in
                 Section(header: Text(stationName)) {
                     // Show the first three departures for each station
-                    ForEach(self.metroHandler.stations[stationName]!.prefix(self.maxInfosPerSection).identified(by: \.self)) { (departure: JFDeparture) in
+                    
+                    ForEach(Array(self.metroHandler.stations[stationName]!.prefix(self.maxInfosPerSection)), id: \.self) { (departure: JFDeparture) in
                         MetroTimeCell(train: departure.train, timeString: departure.timeString)
                     }
                 }

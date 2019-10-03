@@ -10,10 +10,11 @@ import Foundation
 import SwiftUI
 import KVVlive
 import Combine
+import JFSwiftUI
 
-class MetroHandler: BindableObject {
+class MetroHandler: ObservableObject {
     typealias PublisherType = PassthroughSubject<Void, Never>
-    var didChange = PassthroughSubject<Void, Never>()
+    var objectWillChange = PassthroughSubject<Void, Never>()
     
     static let shared = MetroHandler()
     
@@ -26,20 +27,16 @@ class MetroHandler: BindableObject {
     
     // Load the value from the UserDefaults or use the default value
     // TODO: Remove this debug value
-    //@UserDefault("favorites", defaultValue: [JFFavorite]())
+    //@UserDefault("favorites", defaultValue: [JFFavorite](), encoded: true)
     @UserDefault("favorites", defaultValue: Placeholder.favorites, encoded: true)
     var favorites: [JFFavorite] {
-        didSet {
-            didChange.send()
+        willSet {
+            objectWillChange.send()
         }
     }
     
     /// The next departures for the favorites
-    var departures = [JFDeparture]() {
-        didSet {
-            didChange.send()
-        }
-    }
+    @Published var departures = [JFDeparture]()
     
     var stations: [String: [JFDeparture]] {
         .init(grouping: self.departures, by: { $0.station.name })
@@ -81,6 +78,10 @@ class MetroHandler: BindableObject {
             }
             
             self.departures = departures
+            #if DEBUG
+            print("Departures: \(departures)")
+            self.objectWillChange.send()
+            #endif
             print("Update finished")
         }
     }

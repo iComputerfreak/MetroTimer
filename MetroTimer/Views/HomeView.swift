@@ -13,26 +13,20 @@ struct HomeView : View {
     
     var body: some View {
         
-        TabbedView {
+        TabView {
             DepartureView()
                 .tag(0)
-                // FIXME: Add text
-                .tabItemLabel(Text("Departures"))
-                //.tabItemLabel(Image(systemName: "clock"))
-                /*.tabItemLabel {
+                .tabItem {
                     Image(systemName: "clock")
                     Text("Departures")
-                }*/
+                }
             
             SettingsView()
                 .tag(1)
-                // FIXME: Add text
-                .tabItemLabel(Text("Settings"))
-                //.tabItemLabel(Image(systemName: "gear"))
-                /*.tabItemLabel {
+                .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
-                }*/
+                }
         }
     }
 }

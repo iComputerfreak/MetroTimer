@@ -15,7 +15,7 @@ struct JFDeparture: Equatable, Hashable, CustomStringConvertible {
     var station: JFStation
     /// The time in a human readable format
     ///
-    /// - Examples:
+    /// Examples:
     ///
     ///    "7 min"
     ///    "15:30"

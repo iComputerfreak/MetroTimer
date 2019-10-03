@@ -12,28 +12,27 @@ import JFSwiftUI
 
 struct AddFavoriteView : View {
     
+    @Environment(\.presentationMode) var presentationMode
     @State var searchText: String = ""
     @State var searchResults: [JFStation] = []
     
     var body: some View {
-        VStack {
-            SearchBar(text: $searchText, onSearchEditingChanged: {
-                guard !self.searchText.isEmpty else {
-                    return
-                }
-                print("Searching for \(self.searchText)")
-                self.updateSearchResults()
-            })
-            List {
-                ForEach(searchResults) { station in
-                    Button(action: {
-                        // FIXME: Go to new view here to select line and direction and then pop back to the SettingsView
-                        print("Back")
-                    }) {
+        NavigationView {
+            VStack {
+                SearchBar(text: $searchText, onSearchEditingChanged: {
+                    guard !self.searchText.isEmpty else {
+                        return
+                    }
+                    print("Searching for \(self.searchText)")
+                    self.updateSearchResults()
+                })
+                List(searchResults) { station in
+                    NavigationLink(destination: AddLineView()) {
                         Text(station.name)
                     }
                 }
             }
+        .navigationBarTitle("Station")
         }
     }
     

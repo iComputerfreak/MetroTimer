@@ -12,7 +12,9 @@ import Combine
 struct SettingsView : View {
     
     @State private var metroHandler = MetroHandler.shared
-    @Environment(\.editMode) var mode
+    @State private var editMode: EditMode = .inactive
+    
+    @State private var isAddingFavorite = false
     
     @State private var maxInfosPerStation: Int = {
         let stored = UserDefaults.standard.integer(forKey: JFLiterals.Keys.maxInfosPerStation.rawValue)
@@ -27,7 +29,7 @@ struct SettingsView : View {
         NavigationView {
             Form {
                 Section(header: Text("Favorites")) {
-                    ForEach(self.metroHandler.favorites.identified(by: \.self)) { (favorite: JFFavorite) in
+                    ForEach(self.metroHandler.favorites, id: \.self) { (favorite: JFFavorite) in
                         FavoriteCell(favorite: favorite)
                     }
                     .onDelete { indexSet in
@@ -35,31 +37,31 @@ struct SettingsView : View {
                             self.metroHandler.favorites.remove(at: i)
                         })
                     }
-                    // FIXME: After pressing Done, the sorting order reverts
-                    .onMove { (source, destination) in
-                        // sort the indexes high to low
-                        let reversedSource = source.sorted().reversed()
-                        
-                        for index in reversedSource {
-                            // for each item, remove it and insert it at the destination
-                            self.metroHandler.favorites.insert(self.metroHandler.favorites.remove(at: index), at: destination)
-                        }
+                        // FIXME: After pressing Done, the sorting order reverts
+                        .onMove { (source, destination) in
+                            // sort the indexes high to low
+                            let reversedSource = source.sorted().reversed()
+                            
+                            for index in reversedSource {
+                                // for each item, remove it and insert it at the destination
+                                self.metroHandler.favorites.insert(self.metroHandler.favorites.remove(at: index), at: destination)
+                            }
                     }
                     
-                    // FIXME: Currently editMode cannot be read inside Forms/Lists!
-//                    if mode!.value != .inactive {
-//                        NavigationButton(destination: AddFavoriteView()) {
-//                            HStack {
-//                                Spacer()
-//                                Image(systemName: "plus.circle")
-//                                Text("Add Favorite")
-//                                Spacer()
-//                            }
-//                        }
-//                    }
+                    Button(action: {
+                        self.isAddingFavorite = true
+                    }, label: {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "plus.circle")
+                            Text("Add Favorite")
+                            Spacer()
+                        }.foregroundColor(.blue)
+                    })
+                    
                 }
                 
-                Section(header: Text("Maximum lines per station")) {
+                Section(header: Text("Maximum lines to show per station")) {
                     Stepper(value: $maxInfosPerStation, in: 1...10, step: 1, onEditingChanged: { _ in
                         UserDefaults.standard.set(self.maxInfosPerStation, forKey: JFLiterals.Keys.maxInfosPerStation.rawValue)
                     }, label: {
@@ -67,11 +69,16 @@ struct SettingsView : View {
                     })
                 }
             }
-            
-                .navigationBarItems(trailing: EditButton())
-                .navigationBarTitle(Text("Settings"), displayMode: .inline)
+                
+            .navigationBarItems(trailing: EditButton())
+            .navigationBarTitle(Text("Settings"), displayMode: .inline)
+            .environment(\.editMode, $editMode)
         }
-        
+            
+        .sheet(isPresented: $isAddingFavorite) {
+            AddFavoriteView()
+        }
+            
             // When the SettingsView appears
             .onAppear(perform: self.didAppear)
     }
