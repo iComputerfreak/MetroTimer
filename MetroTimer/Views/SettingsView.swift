@@ -11,9 +11,10 @@ import Combine
 
 struct SettingsView : View {
     
-    @State private var metroHandler = MetroHandler.shared
+    @ObservedObject private var metroHandler = MetroHandler.shared
     @State private var editMode: EditMode = .inactive
     
+    // Adding a new station
     @State private var isAddingFavorite = false
     
     @State private var maxInfosPerStation: Int = {
@@ -22,7 +23,7 @@ struct SettingsView : View {
     }()
     
     func didAppear() {
-        
+        print("Settings View did Appear")
     }
     
     var body: some View {
@@ -36,16 +37,6 @@ struct SettingsView : View {
                         indexSet.forEach({ i in
                             self.metroHandler.favorites.remove(at: i)
                         })
-                    }
-                        // FIXME: After pressing Done, the sorting order reverts
-                        .onMove { (source, destination) in
-                            // sort the indexes high to low
-                            let reversedSource = source.sorted().reversed()
-                            
-                            for index in reversedSource {
-                                // for each item, remove it and insert it at the destination
-                                self.metroHandler.favorites.insert(self.metroHandler.favorites.remove(at: index), at: destination)
-                            }
                     }
                     
                     Button(action: {

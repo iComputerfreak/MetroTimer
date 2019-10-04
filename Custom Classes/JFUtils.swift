@@ -34,6 +34,55 @@ struct JFUtils {
         return sqrt(distanceSquared(from: from, to: to))
     }
     
+    static func compareTimeStrings(_ timeString1: String, _ timeString2: String) -> Bool {
+        if timeString1 == "now" {
+            return true
+        }
+        if timeString2 == "now" {
+            return false
+        }
+        // Case 1: "x min"
+        if timeString1.hasSuffix("min") {
+            if timeString2.hasSuffix("min") {
+                // Parse the minutes and compare
+                // In case of format error return true
+                return (timeStringMinutes(timeString1) ?? Int.min) <= (timeStringMinutes(timeString2) ?? Int.max)
+            } else {
+                return true
+            }
+        // Case 2: "xx:xx"
+        } else {
+            if timeString2.hasSuffix("min") {
+                return false
+            } else {
+                // Parse the times and compare
+                if let time1 = timeStringComponents(timeString1), let time2 = timeStringComponents(timeString2) {
+                    return (time1.0 * 100 + time1.1) <= (time2.0 * 100 + time2.1)
+                }
+            }
+        }
+        return true
+    }
+    
+    private static func timeStringMinutes(_ timeString: String) -> Int? {
+        let components = timeString.components(separatedBy: " ")
+        guard components.count == 2, components.last! == "min" else {
+            return nil
+        }
+        return Int(components.first!)
+    }
+    
+    private static func timeStringComponents(_ timeString: String) -> (Int, Int)? {
+        let components = timeString.components(separatedBy: ":")
+        guard components.count == 2 else {
+            return nil
+        }
+        if let hours = Int(components.first!), let mins = Int(components.last!) {
+            return (hours, mins)
+        }
+        return nil
+    }
+    
 }
 
 struct JFLiterals {

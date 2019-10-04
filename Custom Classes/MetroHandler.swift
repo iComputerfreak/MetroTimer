@@ -27,9 +27,7 @@ class MetroHandler: ObservableObject {
     var updateTimer: Timer? = nil
     
     // Load the value from the UserDefaults or use the default value
-    // TODO: Remove this debug value
-    //@UserDefault("favorites", defaultValue: [JFFavorite](), encoded: true)
-    @UserDefault("favorites", defaultValue: Placeholder.favorites, encoded: true)
+    @UserDefault("favorites", defaultValue: [JFFavorite](), encoded: true)
     var favorites: [JFFavorite] {
         willSet {
             objectWillChange.send()
@@ -39,8 +37,9 @@ class MetroHandler: ObservableObject {
     /// The next departures for the favorites
     @Published var departures = [JFDeparture]()
     
+    /// Returns a dictionary of station names with the corresponding departures of that station (sorted by time)
     var stations: [String: [JFDeparture]] {
-        .init(grouping: self.departures, by: { $0.station.name })
+        .init(grouping: self.departures.sorted(by: { JFUtils.compareTimeStrings($0.timeString, $1.timeString) }), by: { $0.station.name })
     }
     
     /// Starts the update timer and immediately fires the first update

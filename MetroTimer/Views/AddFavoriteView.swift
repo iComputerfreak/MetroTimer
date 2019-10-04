@@ -13,8 +13,8 @@ import JFSwiftUI
 struct AddFavoriteView : View {
     
     @Environment(\.presentationMode) var presentationMode
-    @State var searchText: String = ""
-    @State var searchResults: [JFStation] = []
+    @State private var searchText: String = ""
+    @State private var searchResults: [JFStation] = []
     
     var body: some View {
         NavigationView {
@@ -27,7 +27,7 @@ struct AddFavoriteView : View {
                     self.updateSearchResults()
                 })
                 List(searchResults) { station in
-                    NavigationLink(destination: AddLineView(station: station)) {
+                    NavigationLink(destination: AddLineView(station: station, superPresentationMode: self.presentationMode)) {
                         Text(station.name)
                     }.isDetailLink(false)
                 }
@@ -52,7 +52,8 @@ struct AddFavoriteView : View {
 #if DEBUG
 struct AddFavoriteView_Previews : PreviewProvider {
     static var previews: some View {
-        AddFavoriteView()
+        Text("Not implemented yet")
+        //AddFavoriteView()
     }
 }
 #endif

@@ -66,16 +66,9 @@ struct DepartureView : View {
     
     var departuresList: some View {
         List {
-            ForEach(self.metroHandler.stations.keys.sorted(by: { (key1, key2) -> Bool in
-                // Sort the stations like the favorites
-                let favoriteNames = self.metroHandler.favorites.map({ $0.station.name })
-                let index1 = favoriteNames.firstIndex(of: key1)!
-                let index2 = favoriteNames.firstIndex(of: key2)!
-                return index1 < index2
-            }), id: \.self) { stationName in
+            ForEach(self.metroHandler.stations.keys.sorted(), id: \.self) { stationName in
                 Section(header: Text(stationName)) {
-                    // Show the first three departures for each station
-                    
+                    // Show the first x departures for each favorite
                     ForEach(Array(self.metroHandler.stations[stationName]!.prefix(self.maxInfosPerSection)), id: \.self) { (departure: JFDeparture) in
                         MetroTimeCell(train: departure.train, timeString: departure.timeString)
                     }
