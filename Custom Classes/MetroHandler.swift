@@ -17,6 +17,7 @@ class MetroHandler: ObservableObject {
     var objectWillChange = PassthroughSubject<Void, Never>()
     
     static let shared = MetroHandler()
+    let request = Request()
     
     private init() {}
     
@@ -65,12 +66,11 @@ class MetroHandler: ObservableObject {
     @objc func refreshData() {
         DispatchQueue.main.async {
             print("Starting update")
-            let request = Request()
             var departures = [JFDeparture]()
             // Get the data
             for favorite in self.favorites {
                 print("Getting departures for \(favorite.station.name)")
-                request.getDepartures(route: favorite.train.route, stopId: favorite.station.id) { deps in
+                self.request.getDepartures(route: favorite.train.route, stopId: favorite.station.id) { deps in
                     // Filter out the wrong destinations
                     let favoriteDeps = deps.filter({ $0.destination == favorite.train.destination })
                     departures.append(contentsOf: favoriteDeps.map({ JFDeparture(from: $0, station: favorite.station) }))
@@ -84,6 +84,26 @@ class MetroHandler: ObservableObject {
             #endif
             print("Update finished")
         }
+    }
+    
+    // Synchronically!
+    func trains(at station: JFStation) -> [JFTrain] {
+        let semaphore = DispatchSemaphore(value: 0)
+        var trains = [JFTrain]()
+        // Fetch the lines and direction by checking the next available departures
+        self.request.getDepartures(stopId: station.id) { (departures) in
+            for dep in departures {
+                let train = JFTrain(route: dep.route, destination: dep.destination)
+                if !trains.contains(train) {
+                    trains.append(train)
+                }
+            }
+            // Free the semaphore slot
+            semaphore.signal()
+        }
+        
+        semaphore.wait()
+        return trains
     }
     
 }

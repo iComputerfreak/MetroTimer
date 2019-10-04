@@ -27,9 +27,9 @@ struct AddFavoriteView : View {
                     self.updateSearchResults()
                 })
                 List(searchResults) { station in
-                    NavigationLink(destination: AddLineView()) {
+                    NavigationLink(destination: AddLineView(station: station)) {
                         Text(station.name)
-                    }
+                    }.isDetailLink(false)
                 }
             }
         .navigationBarTitle("Station")

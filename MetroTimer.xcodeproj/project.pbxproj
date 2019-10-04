@@ -21,7 +21,7 @@
 		AB38AFAB22AAEC2E00DC09BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFA922AAEC2E00DC09BE /* LaunchScreen.storyboard */; };
 		AB41B9A522B40DD100A83985 /* DepartureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A422B40DD100A83985 /* DepartureView.swift */; };
 		AB41B9A722B413F700A83985 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A622B413F700A83985 /* SettingsView.swift */; };
-		ABB7D8CD234660D10065C7C1 /* AddLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7D8CC234660D10065C7C1 /* AddLineView.swift */; };
+		ABB7D8CD234660D10065C7C1 /* AddRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7D8CC234660D10065C7C1 /* AddRouteView.swift */; };
 		ABC2414322BD134E001D4B01 /* AddFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */; };
 		ABE3A59222C6639500575164 /* JFSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = ABE3A59122C6639500575164 /* JFSwiftUI */; };
 /* End PBXBuildFile section */
@@ -57,7 +57,7 @@
 		AB38AFB722AAEC2F00DC09BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB41B9A422B40DD100A83985 /* DepartureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureView.swift; sourceTree = "<group>"; };
 		AB41B9A622B413F700A83985 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		ABB7D8CC234660D10065C7C1 /* AddLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLineView.swift; sourceTree = "<group>"; };
+		ABB7D8CC234660D10065C7C1 /* AddRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteView.swift; sourceTree = "<group>"; };
 		ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +132,7 @@
 				AB41B9A422B40DD100A83985 /* DepartureView.swift */,
 				AB41B9A622B413F700A83985 /* SettingsView.swift */,
 				ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */,
-				ABB7D8CC234660D10065C7C1 /* AddLineView.swift */,
+				ABB7D8CC234660D10065C7C1 /* AddRouteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 				AB12F23E22ABFCA5006F13CC /* JFDeparture.swift in Sources */,
 				ABC2414322BD134E001D4B01 /* AddFavoriteView.swift in Sources */,
 				AB341E9822AAF760004CAD6A /* MetroTimeCell.swift in Sources */,
-				ABB7D8CD234660D10065C7C1 /* AddLineView.swift in Sources */,
+				ABB7D8CD234660D10065C7C1 /* AddRouteView.swift in Sources */,
 				AB12F24022AC0956006F13CC /* MetroHandler.swift in Sources */,
 				AB38AFA322AAEC2D00DC09BE /* HomeView.swift in Sources */,
 				AB12F23C22ABFBFF006F13CC /* JFTrain.swift in Sources */,
