@@ -21,9 +21,10 @@
 		AB38AFAB22AAEC2E00DC09BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB38AFA922AAEC2E00DC09BE /* LaunchScreen.storyboard */; };
 		AB41B9A522B40DD100A83985 /* DepartureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A422B40DD100A83985 /* DepartureView.swift */; };
 		AB41B9A722B413F700A83985 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A622B413F700A83985 /* SettingsView.swift */; };
+		AB4BD512234BD984003DD217 /* JFSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB4BD511234BD984003DD217 /* JFSwiftUI */; };
+		AB4BD514234BEFE6003DD217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4BD513234BEFE6003DD217 /* Assets.xcassets */; };
 		ABB7D8CD234660D10065C7C1 /* AddRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7D8CC234660D10065C7C1 /* AddRouteView.swift */; };
 		ABC2414322BD134E001D4B01 /* AddFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */; };
-		ABE3A59222C6639500575164 /* JFSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = ABE3A59122C6639500575164 /* JFSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,9 +55,9 @@
 		AB38AFA722AAEC2E00DC09BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB38AFAA22AAEC2E00DC09BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB38AFAC22AAEC2E00DC09BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB38AFB722AAEC2F00DC09BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB41B9A422B40DD100A83985 /* DepartureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureView.swift; sourceTree = "<group>"; };
 		AB41B9A622B413F700A83985 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AB4BD513234BEFE6003DD217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABB7D8CC234660D10065C7C1 /* AddRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteView.swift; sourceTree = "<group>"; };
 		ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABE3A59222C6639500575164 /* JFSwiftUI in Frameworks */,
+				AB4BD512234BD984003DD217 /* JFSwiftUI in Frameworks */,
 				AB127F6C22BA86EA00D9FC4D /* KVVlive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +109,7 @@
 			children = (
 				AB38AFA022AAEC2D00DC09BE /* AppDelegate.swift */,
 				AB38AFE122AAED6E00DC09BE /* Views */,
-				AB38AFB722AAEC2F00DC09BE /* Assets.xcassets */,
+				AB4BD513234BEFE6003DD217 /* Assets.xcassets */,
 				AB38AFA922AAEC2E00DC09BE /* LaunchScreen.storyboard */,
 				AB38AFAC22AAEC2E00DC09BE /* Info.plist */,
 				AB38AFA622AAEC2E00DC09BE /* Preview Content */,
@@ -182,7 +183,7 @@
 			name = MetroTimer;
 			packageProductDependencies = (
 				AB127F6B22BA86EA00D9FC4D /* KVVlive */,
-				ABE3A59122C6639500575164 /* JFSwiftUI */,
+				AB4BD511234BD984003DD217 /* JFSwiftUI */,
 			);
 			productName = MetroTimer;
 			productReference = AB38AF9D22AAEC2D00DC09BE /* MetroTimer.app */;
@@ -214,7 +215,7 @@
 			mainGroup = AB38AF9422AAEC2D00DC09BE;
 			packageReferences = (
 				AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */,
-				ABE3A59022C6639500575164 /* XCRemoteSwiftPackageReference "JFSwiftUI" */,
+				AB4BD510234BD984003DD217 /* XCRemoteSwiftPackageReference "JFSwiftUI" */,
 			);
 			productRefGroup = AB38AF9E22AAEC2D00DC09BE /* Products */;
 			projectDirPath = "";
@@ -231,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB38AFAB22AAEC2E00DC09BE /* LaunchScreen.storyboard in Resources */,
+				AB4BD514234BEFE6003DD217 /* Assets.xcassets in Resources */,
 				AB38AFA822AAEC2E00DC09BE /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +332,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -383,6 +386,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -390,7 +394,9 @@
 		AB38AFDC22AAEC3000DC09BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "MetroTimer/Preview\\ Content";
 				DEVELOPMENT_TEAM = 46C9Y785NA;
@@ -400,7 +406,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JonasFrey.MetroTimer;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.MetroTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -410,7 +416,9 @@
 		AB38AFDD22AAEC3000DC09BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "MetroTimer/Preview\\ Content";
 				DEVELOPMENT_TEAM = 46C9Y785NA;
@@ -420,7 +428,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JonasFrey.MetroTimer;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.MetroTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -459,12 +467,12 @@
 				minimumVersion = 1.1.0;
 			};
 		};
-		ABE3A59022C6639500575164 /* XCRemoteSwiftPackageReference "JFSwiftUI" */ = {
+		AB4BD510234BD984003DD217 /* XCRemoteSwiftPackageReference "JFSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iComputerfreak/JFSwiftUI.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -475,9 +483,9 @@
 			package = AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */;
 			productName = KVVlive;
 		};
-		ABE3A59122C6639500575164 /* JFSwiftUI */ = {
+		AB4BD511234BD984003DD217 /* JFSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ABE3A59022C6639500575164 /* XCRemoteSwiftPackageReference "JFSwiftUI" */;
+			package = AB4BD510234BD984003DD217 /* XCRemoteSwiftPackageReference "JFSwiftUI" */;
 			productName = JFSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
