@@ -27,6 +27,8 @@ struct AddLineView: View {
     @Environment(\.presentationMode) private var presentationMode
     @ObservedObject private var metroHandler = MetroHandler.shared
     
+    @State private var isShowingError = false
+    
     func didAppear() {
         print("Loading trains...")
         // Load the routes and destinations
@@ -59,6 +61,10 @@ struct AddLineView: View {
                 }
             }
                 .navigationBarItems(trailing: Button("Add") {
+                    guard !self.route.isEmpty && !self.destination.isEmpty else {
+                        self.isShowingError = true
+                        return
+                    }
                     print("Route: \(self.route), Destination: \(self.destination)")
                     self.metroHandler.favorites.append(JFFavorite(station: self.station, train: JFTrain(route: self.route, destination: self.destination)))
                     self.superPresentationMode.dismiss()
@@ -66,6 +72,11 @@ struct AddLineView: View {
         }
         .onAppear(perform: self.didAppear)
         .navigationBarTitle("Route and Direction")
+        
+        // MARK: Error for not selecting a route or a destination
+        .alert(isPresented: $isShowingError) {
+            Alert(title: Text("Missing information"), message: Text("Please select a route and destination."))
+        }
     }
     
     private func directions(route: String) -> [String]? {
@@ -84,7 +95,6 @@ struct AddLineView: View {
 
 struct AddLineView_Previews: PreviewProvider {
     static var previews: some View {
-        //AddLineView()
         Text("Not available")
     }
 }

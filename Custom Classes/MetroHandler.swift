@@ -16,21 +16,26 @@ class MetroHandler: ObservableObject {
     typealias PublisherType = PassthroughSubject<Void, Never>
     var objectWillChange = PassthroughSubject<Void, Never>()
     
+    private let favoritesKey = "favorites"
+    
     static let shared = MetroHandler()
     let request = Request()
-    
-    private init() {}
     
     /// The time interval in which the timer tries to update the data
     let updateInterval: TimeInterval = 30
     /// The timer that updates the departures
     var updateTimer: Timer? = nil
     
-    // Load the value from the UserDefaults or use the default value
-    @UserDefault("favorites", defaultValue: [JFFavorite](), encoded: true)
+    /// The favorite (station, route, direction) tuples
     var favorites: [JFFavorite] {
         willSet {
             objectWillChange.send()
+        }
+        didSet {
+            // Save the new favorites to the UserDefaults
+            DispatchQueue.main.async {
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(self.favorites), forKey: self.favoritesKey)
+            }
         }
     }
     
@@ -40,6 +45,16 @@ class MetroHandler: ObservableObject {
     /// Returns a dictionary of station names with the corresponding departures of that station (sorted by time)
     var stations: [String: [JFDeparture]] {
         .init(grouping: self.departures.sorted(by: { JFUtils.compareTimeStrings($0.timeString, $1.timeString) }), by: { $0.station.name })
+    }
+    
+    private init() {
+        // Load the favorites from the UserDefaults
+        self.favorites = []
+        if let data = UserDefaults.standard.data(forKey: favoritesKey) {
+            if let value = try? PropertyListDecoder().decode([JFFavorite].self, from: data) {
+                self.favorites = value
+            }
+        }
     }
     
     /// Starts the update timer and immediately fires the first update
@@ -76,10 +91,10 @@ class MetroHandler: ObservableObject {
                 }
             }
             
+            self.objectWillChange.send()
             self.departures = departures
             #if DEBUG
             print("Departures: \(departures)")
-            self.objectWillChange.send()
             #endif
             print("Update finished")
         }

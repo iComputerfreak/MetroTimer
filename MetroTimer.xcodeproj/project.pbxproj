@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB127F6C22BA86EA00D9FC4D /* KVVlive in Frameworks */ = {isa = PBXBuildFile; productRef = AB127F6B22BA86EA00D9FC4D /* KVVlive */; };
 		AB127F6F22BA960B00D9FC4D /* JFFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB127F6E22BA960B00D9FC4D /* JFFavorite.swift */; };
 		AB12F23A22ABFAAC006F13CC /* JFStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23922ABFAAC006F13CC /* JFStation.swift */; };
 		AB12F23C22ABFBFF006F13CC /* JFTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12F23B22ABFBFF006F13CC /* JFTrain.swift */; };
@@ -23,6 +22,7 @@
 		AB41B9A722B413F700A83985 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB41B9A622B413F700A83985 /* SettingsView.swift */; };
 		AB4BD512234BD984003DD217 /* JFSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB4BD511234BD984003DD217 /* JFSwiftUI */; };
 		AB4BD514234BEFE6003DD217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4BD513234BEFE6003DD217 /* Assets.xcassets */; };
+		ABAEAC7A234E281100FB3644 /* KVVlive in Frameworks */ = {isa = PBXBuildFile; productRef = ABAEAC79234E281100FB3644 /* KVVlive */; };
 		ABB7D8CD234660D10065C7C1 /* AddRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7D8CC234660D10065C7C1 /* AddRouteView.swift */; };
 		ABC2414322BD134E001D4B01 /* AddFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2414222BD134E001D4B01 /* AddFavoriteView.swift */; };
 /* End PBXBuildFile section */
@@ -67,8 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABAEAC7A234E281100FB3644 /* KVVlive in Frameworks */,
 				AB4BD512234BD984003DD217 /* JFSwiftUI in Frameworks */,
-				AB127F6C22BA86EA00D9FC4D /* KVVlive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,8 +182,8 @@
 			);
 			name = MetroTimer;
 			packageProductDependencies = (
-				AB127F6B22BA86EA00D9FC4D /* KVVlive */,
 				AB4BD511234BD984003DD217 /* JFSwiftUI */,
+				ABAEAC79234E281100FB3644 /* KVVlive */,
 			);
 			productName = MetroTimer;
 			productReference = AB38AF9D22AAEC2D00DC09BE /* MetroTimer.app */;
@@ -214,8 +214,8 @@
 			);
 			mainGroup = AB38AF9422AAEC2D00DC09BE;
 			packageReferences = (
-				AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */,
 				AB4BD510234BD984003DD217 /* XCRemoteSwiftPackageReference "JFSwiftUI" */,
+				ABAEAC78234E281100FB3644 /* XCRemoteSwiftPackageReference "kvvliveapi" */,
 			);
 			productRefGroup = AB38AF9E22AAEC2D00DC09BE /* Products */;
 			projectDirPath = "";
@@ -459,14 +459,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/iComputerfreak/kvvliveapi";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
-			};
-		};
 		AB4BD510234BD984003DD217 /* XCRemoteSwiftPackageReference "JFSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iComputerfreak/JFSwiftUI.git";
@@ -475,18 +467,26 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		ABAEAC78234E281100FB3644 /* XCRemoteSwiftPackageReference "kvvliveapi" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mdvjd/kvvliveapi.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AB127F6B22BA86EA00D9FC4D /* KVVlive */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AB127F6A22BA86EA00D9FC4D /* XCRemoteSwiftPackageReference "kvvliveapi" */;
-			productName = KVVlive;
-		};
 		AB4BD511234BD984003DD217 /* JFSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AB4BD510234BD984003DD217 /* XCRemoteSwiftPackageReference "JFSwiftUI" */;
 			productName = JFSwiftUI;
+		};
+		ABAEAC79234E281100FB3644 /* KVVlive */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABAEAC78234E281100FB3644 /* XCRemoteSwiftPackageReference "kvvliveapi" */;
+			productName = KVVlive;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
