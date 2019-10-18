@@ -58,20 +58,25 @@ struct AddLineView: View {
                             // Change to SegmentedPickerStyle, when its fixed (currently it shows an extra item from the last state)
                             //.pickerStyle(SegmentedPickerStyle())
                     }
+                    if !route.isEmpty && !destination.isEmpty {
+                        Section {
+                            Button("Add Favorite") {
+                                guard !self.route.isEmpty && !self.destination.isEmpty else {
+                                    self.isShowingError = true
+                                    return
+                                }
+                                print("Route: \(self.route), Destination: \(self.destination)")
+                                self.metroHandler.favorites.append(JFFavorite(station: self.station, train: JFTrain(route: self.route, destination: self.destination)))
+                                self.superPresentationMode.dismiss()
+                            }
+                        }
+                    }
                 }
             }
-                .navigationBarItems(trailing: Button("Add") {
-                    guard !self.route.isEmpty && !self.destination.isEmpty else {
-                        self.isShowingError = true
-                        return
-                    }
-                    print("Route: \(self.route), Destination: \(self.destination)")
-                    self.metroHandler.favorites.append(JFFavorite(station: self.station, train: JFTrain(route: self.route, destination: self.destination)))
-                    self.superPresentationMode.dismiss()
-                })
         }
         .onAppear(perform: self.didAppear)
         .navigationBarTitle("Route and Direction")
+        .navigationBarBackButtonHidden(true)
         
         // MARK: Error for not selecting a route or a destination
         .alert(isPresented: $isShowingError) {

@@ -17,9 +17,9 @@ struct SettingsView : View {
     // Adding a new station
     @State private var isAddingFavorite = false
     
-    @State private var maxInfosPerStation: Int = {
-        let stored = UserDefaults.standard.integer(forKey: JFLiterals.Keys.maxInfosPerStation.rawValue)
-        return stored > 0 ? stored : JFLiterals.maxInfosPerStation
+    @State private var maxInfosPerStation: [String: Int] = {
+        let stored = UserDefaults.standard.dictionary(forKey: JFLiterals.Keys.maxInfosPerStation.rawValue) as? [String: Int] ?? [:]
+        return stored
     }()
     
     func didAppear() {
@@ -52,12 +52,33 @@ struct SettingsView : View {
                     
                 }
                 
-                Section(header: Text("Maximum lines to show per station")) {
-                    Stepper(value: $maxInfosPerStation, in: 1...10, step: 1, onEditingChanged: { _ in
-                        UserDefaults.standard.set(self.maxInfosPerStation, forKey: JFLiterals.Keys.maxInfosPerStation.rawValue)
-                    }, label: {
-                        Text("Entries per Station: \(self.maxInfosPerStation)")
-                    })
+                if !self.metroHandler.favorites.isEmpty {
+                    Section(header: Text("Maximum lines to show for each station")) {
+                        ForEach(self.metroHandler.favoriteStations, id: \.self) { station in
+                            Stepper(value: Binding(get: {
+                                // Load or use the default value
+                                if let value = self.maxInfosPerStation[station.name] {
+                                    return value
+                                } else {
+                                    // No entry available, set the default value
+                                    return JFLiterals.maxInfosPerStation
+                                }
+                            }, set: { newValue in
+                                self.maxInfosPerStation[station.name] = newValue
+                            }),
+                                    in: 1...10, step: 1, onEditingChanged: { _ in
+                                        // Save the variable to the user defaults
+                                        UserDefaults.standard.set(self.maxInfosPerStation, forKey: JFLiterals.Keys.maxInfosPerStation.rawValue)
+                                    }, label: {
+                                HStack {
+                                    Text("\(station.name)")
+                                    Spacer()
+                                    Text("\(self.maxInfosPerStation[station.name] ?? JFLiterals.maxInfosPerStation)")
+                                        .bold()
+                                }
+                            })
+                        }
+                    }
                 }
             }
                 

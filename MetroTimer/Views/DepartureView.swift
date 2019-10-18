@@ -11,13 +11,15 @@ import JFSwiftUI
 
 struct DepartureView : View {
     
-    @UserDefault(JFLiterals.Keys.maxInfosPerStation.rawValue, defaultValue: 3)
-    var maxInfosPerSection: Int
+    @State private var maxInfosPerStation = [String: Int]()
     
     @ObservedObject private var metroHandler = MetroHandler.shared
     
     func viewDidAppear() {
         print("View did appear")
+        // Load the maxInfosPerStation (it may be changed in the settings)
+        let stored = UserDefaults.standard.dictionary(forKey: JFLiterals.Keys.maxInfosPerStation.rawValue) as? [String: Int]
+        self.maxInfosPerStation = stored ?? [:]
         self.metroHandler.startUpdates()
     }
     
@@ -69,12 +71,18 @@ struct DepartureView : View {
             ForEach(self.metroHandler.stations.keys.sorted(), id: \.self) { stationName in
                 Section(header: Text(stationName)) {
                     // Show the first x departures for each favorite
-                    ForEach(Array(self.metroHandler.stations[stationName]!.prefix(self.maxInfosPerSection)), id: \.self) { (departure: JFDeparture) in
+                    ForEach(self.departures(stationName), id: \.self) { (departure: JFDeparture) in
                         MetroTimeCell(train: departure.train, timeString: departure.timeString)
                     }
                 }
             }
         }
+    }
+    
+    func departures(_ stationName: String) -> [JFDeparture] {
+        let maxInfos = self.maxInfosPerStation[stationName] ?? JFLiterals.maxInfosPerStation
+        let departures = self.metroHandler.stations[stationName]!
+        return Array(departures.prefix(maxInfos))
     }
 }
 

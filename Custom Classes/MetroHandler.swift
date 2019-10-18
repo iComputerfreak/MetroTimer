@@ -35,7 +35,23 @@ class MetroHandler: ObservableObject {
             // Save the new favorites to the UserDefaults
             DispatchQueue.main.async {
                 UserDefaults.standard.set(try? PropertyListEncoder().encode(self.favorites), forKey: self.favoritesKey)
+                #if DEBUG
+                if self.favorites.isEmpty {
+                    // IMPORTANT: This creates an endless recursion in DEBUG mode, if Placeholder.favorites is empty
+                    self.favorites = Placeholder.favorites
+                }
+                #endif
             }
+        }
+    }
+    
+    /// The favorite stations cleaned of duplicates, sorted by station name
+    var favoriteStations: [JFStation] {
+        // Get the stations of the favorites and remove duplicates
+        let stations = Set(self.favorites.map({ $0.station }))
+        // Sort them by name
+        return stations.sorted { (station1, station2) -> Bool in
+            station1.name.lexicographicallyPrecedes(station2.name)
         }
     }
     

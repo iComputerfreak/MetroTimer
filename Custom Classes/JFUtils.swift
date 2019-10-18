@@ -50,7 +50,7 @@ struct JFUtils {
             } else {
                 return true
             }
-        // Case 2: "xx:xx"
+            // Case 2: "xx:xx"
         } else {
             if timeString2.hasSuffix("min") {
                 return false
@@ -106,6 +106,9 @@ struct Placeholder {
     static let durlacherTor = JFStation(id: "de:8212:3", name: "Karlsruhe Durlacher Tor", coordinates: .init(lat: 49.009255, lon: 8.413622))
     static let ottoSachs = JFStation(id: "de:8212:508", name: "Karlsruhe Otto-Sachs-Str.", coordinates: .init(lat: 49.00345241, lon: 8.38932404))
     static let kronenplatz = JFStation(id: "de:8212:80", name: "Karlsruhe Kronenplatz (Erler-Str)", coordinates: .init(lat: 49.00892899, lon: 8.41014331))
+    static let rintheimForststrasse = JFStation(id: "de:8212:313", name: "Rintheim Forststraße", coordinates: .init(lat: 49.014115279999999, lon: 8.4422622))
+    static let hirtenweg = JFStation(id: "de:8212:403", name: "Karlsruhe Hirtenweg/Techn.park", coordinates: .init(lat: 49.01771743, lon: 8.43965173))
+    static let kronenplatzKaiserstrasse = JFStation(id: "de:8212:2", name: "Karlsruhe Kronenplatz (Kaiserstr)", coordinates: .init(lat: 49.0093644, lon: 8.40912665))
     
     static let placeholderDepartures = [
         JFDeparture(train: train1, station: ottoSachs, timeString: "in 5 min"),
@@ -120,9 +123,15 @@ struct Placeholder {
     ]
     
     static let favorites: [JFFavorite] = [
-        JFFavorite(station: ottoSachs, train: train1),
-        JFFavorite(station: durlacherTor, train: train2),
-        JFFavorite(station: kronenplatz, train: train2)
+        JFFavorite(station: durlacherTor, train: .init(route: "4", destination: "Waldstadt")),
+        JFFavorite(station: durlacherTor, train: .init(route: "5", destination: "Rintheim")),
+        JFFavorite(station: durlacherTor, train: .init(route: "S2", destination: "Reitschulschlag")),
+        JFFavorite(station: rintheimForststrasse, train: .init(route: "5", destination: "Rheinhafen")),
+        JFFavorite(station: hirtenweg, train: .init(route: "4", destination: "Tivoli über Hbf")),
+        JFFavorite(station: hirtenweg, train: .init(route: "S2", destination: "Rheinstetten")),
+        JFFavorite(station: kronenplatzKaiserstrasse, train: .init(route: "5", destination: "Rintheim")),
+        JFFavorite(station: kronenplatzKaiserstrasse, train: .init(route: "S2", destination: "Blankenloch")),
+        JFFavorite(station: kronenplatzKaiserstrasse, train: .init(route: "4", destination: "Waldstadt"))
     ]
     
 }
