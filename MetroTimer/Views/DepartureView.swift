@@ -64,6 +64,7 @@ struct DepartureView : View {
             .onAppear(perform: viewDidAppear)
             // Stop updates on disappear
             .onDisappear(perform: viewDidDisappear)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     var departuresList: some View {

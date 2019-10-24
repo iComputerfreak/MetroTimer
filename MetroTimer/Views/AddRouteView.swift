@@ -77,6 +77,9 @@ struct AddLineView: View {
         .onAppear(perform: self.didAppear)
         .navigationBarTitle("Route and Direction")
         .navigationBarBackButtonHidden(true)
+        .navigationBarItems(trailing: Button("Dismiss") {
+            self.superPresentationMode.dismiss()
+        })
         
         // MARK: Error for not selecting a route or a destination
         .alert(isPresented: $isShowingError) {

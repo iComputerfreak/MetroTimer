@@ -86,6 +86,7 @@ struct SettingsView : View {
             .navigationBarTitle(Text("Settings"), displayMode: .inline)
             .environment(\.editMode, $editMode)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
             
         .sheet(isPresented: $isAddingFavorite) {
             AddFavoriteView()

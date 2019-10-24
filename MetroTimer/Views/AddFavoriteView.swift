@@ -32,8 +32,12 @@ struct AddFavoriteView : View {
                     }.isDetailLink(false)
                 }
             }
-        .navigationBarTitle("Station")
+            .navigationBarTitle("Station")
+            .navigationBarItems(trailing: Button("Dismiss") {
+                self.presentationMode.wrappedValue.dismiss()
+            })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     
