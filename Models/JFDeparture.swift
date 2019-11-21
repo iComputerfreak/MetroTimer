@@ -17,8 +17,9 @@ struct JFDeparture: Equatable, Hashable, CustomStringConvertible {
     ///
     /// Examples:
     ///
-    ///    "7 min"
-    ///    "15:30"
+    ///     "now"
+    ///     "7 min"
+    ///     "15:30"
     var timeString: String
     
     var description: String {

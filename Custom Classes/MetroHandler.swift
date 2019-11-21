@@ -12,14 +12,14 @@ import KVVlive
 import Combine
 import JFSwiftUI
 
+/// Handles interaction with the KVVlive API
 class MetroHandler: ObservableObject {
-    typealias PublisherType = PassthroughSubject<Void, Never>
-    var objectWillChange = PassthroughSubject<Void, Never>()
     
+    /// The key to use for saving the favorites to the UserDefaults
     private let favoritesKey = "favorites"
     
     static let shared = MetroHandler()
-    let request = Request()
+    private let request = Request()
     
     /// The time interval in which the timer tries to update the data
     let updateInterval: TimeInterval = 30

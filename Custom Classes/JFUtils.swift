@@ -11,6 +11,7 @@ import Foundation
 /// A set of utility functions
 struct JFUtils {
     
+    /// Singleton instance property
     public static let shared = JFUtils()
     
     // Initializer disabled
@@ -34,6 +35,10 @@ struct JFUtils {
         return sqrt(distanceSquared(from: from, to: to))
     }
     
+    /// Compares two time strings and returns, whether the first is lower than or equal to the second.
+    /// - Parameters:
+    ///   - timeString1: The first time string
+    ///   - timeString2: The second time string
     static func compareTimeStrings(_ timeString1: String, _ timeString2: String) -> Bool {
         if timeString1 == "now" {
             return true
@@ -64,6 +69,9 @@ struct JFUtils {
         return true
     }
     
+    /// Extracts the minutes of a given time string.
+    /// - Parameter timeString: The time string in the format `_ min`
+    /// - Returns: The minutes of the given time string, or nil, if the time string is not correctly formatted
     private static func timeStringMinutes(_ timeString: String) -> Int? {
         let components = timeString.components(separatedBy: " ")
         guard components.count == 2, components.last! == "min" else {
@@ -72,6 +80,9 @@ struct JFUtils {
         return Int(components.first!)
     }
     
+    /// Separates a given time string into its integer components.
+    /// - Parameter timeString: The time string in the format `__:__`
+    /// - Returns: The hours and minutes of the time string, or nil, if the time string is not correctly formatted
     private static func timeStringComponents(_ timeString: String) -> (Int, Int)? {
         let components = timeString.components(separatedBy: ":")
         guard components.count == 2 else {
@@ -86,9 +97,10 @@ struct JFUtils {
 }
 
 struct JFLiterals {
-    
+    /// The default value of entries to show per station
     static let maxInfosPerStation = 3
     
+    /// Keys to use for UserDefaults
     enum Keys: String {
         case maxInfosPerStation = "maxInfosPerStation"
     }
@@ -97,7 +109,7 @@ struct JFLiterals {
 
 #if DEBUG
 
-/// Represents some sample data
+/// Represents some sample data to use for testing
 struct Placeholder {
     
     static let train1 = JFTrain(route: "5", destination: "Rintheim")
