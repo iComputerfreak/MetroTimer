@@ -53,7 +53,7 @@ struct SettingsView : View {
                 }
                 
                 if !self.metroHandler.favorites.isEmpty {
-                    Section(header: Text("Maximum lines to show for each station")) {
+                    Section(header: Text("Maximum rows to show for each station")) {
                         ForEach(self.metroHandler.favoriteStations, id: \.self) { station in
                             Stepper(value: Binding(get: {
                                 // Load or use the default value

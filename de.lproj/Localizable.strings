@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  MetroTimer
+
+  Created by Jonas Frey on 01.12.19.
+  Copyright © 2019 Jonas Frey. All rights reserved.
+*/
+
+"now" = "jetzt";
+"Departures" = "Abfahrten";
+"Loading..." = "Laden...";
+"Retry" = "Wiederholen";
+"Refresh" = "Aktualisieren";
+"Favorites" = "Favoriten";
+"Add Favorite" = "Favorit hinzufügen";
+"Dismiss" = "Schließen";
+"Route" = "Linie";
+"Destination" = "Richtung";
+"Route and Direction" = "Linie und Richtung";
+"Missing Information" = "Fehlende Informationen";
+"Please select a route and destination." = "Bitte wählen Sie eine Linie und eine Richtung";
+"Maximum rows to show for each station" = "Maximale Anzahl an Zeilen pro Station";
+"Settings" = "Einstellungen";
