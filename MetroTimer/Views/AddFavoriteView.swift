@@ -14,22 +14,33 @@ struct AddFavoriteView : View {
     
     @Environment(\.presentationMode) var presentationMode
     @State private var searchText: String = ""
-    @State private var searchResults: [JFStation] = []
+    @State private var searchResults: [JFStation]? = nil
     
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: $searchText, onSearchEditingChanged: {
+                SearchBar(text: $searchText, onSearchButtonClicked: {
                     guard !self.searchText.isEmpty else {
                         return
                     }
                     print("Searching for \(self.searchText)")
                     self.updateSearchResults()
                 })
-                List(searchResults) { station in
-                    NavigationLink(destination: AddLineView(station: station, superPresentationMode: self.presentationMode)) {
-                        Text(station.name)
-                    }.isDetailLink(false)
+                // searchResults == nil means not yet searched!
+                if searchResults != nil && searchResults!.isEmpty && !searchText.isEmpty {
+                    List {
+                        HStack {
+                            Spacer()
+                            Text("No results")
+                            Spacer()
+                        }
+                    }
+                } else {
+                    List(searchResults ?? []) { station in
+                        NavigationLink(destination: AddLineView(station: station, superPresentationMode: self.presentationMode)) {
+                            Text(station.name)
+                        }.isDetailLink(false)
+                    }
                 }
             }
             .navigationBarTitle("Station")
@@ -43,13 +54,14 @@ struct AddFavoriteView : View {
     
     func updateSearchResults() {
         let request = Request()
+        print("Searching for \(searchText)")
         request.searchStop(by: searchText) { (stops) in
             searchResults = stops.map { (stop) -> JFStation in
                 let coordinates = JFCoordinates(lat: stop.coordinates.lat, lon: stop.coordinates.lon)
                 return JFStation(id: stop.id, name: stop.name, coordinates: coordinates)
             }
         }
-        print("Updated \(searchResults.count) search results")
+        print("Updated \(searchResults?.count ?? -1) search results")
     }
 }
 
